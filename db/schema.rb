@@ -10,9 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2019_11_25_160822) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "given_likes", force: :cascade do |t|
+    t.string "ig_media_id"
+    t.string "ig_user_id"
+    t.bigint "job_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["job_id"], name: "index_given_likes_on_job_id"
+  end
+
+  create_table "jobs", force: :cascade do |t|
+    t.string "image_url"
+    t.text "caption"
+    t.string "hashtag"
+    t.bigint "user_id"
+    t.string "user_ig_media_id"
+    t.integer "likes_received"
+    t.datetime "launched_at"
+    t.datetime "stopped_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_jobs_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "ig_user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "given_likes", "jobs"
+  add_foreign_key "jobs", "users"
 end
