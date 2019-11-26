@@ -1,0 +1,13 @@
+edit.html.erb
+<H1>EditJOB Page</h1>
+<%= simple_form_for [@user, @job] do |f| %>
+  <%= f.input :image_url %>
+  <%= f.input :caption %>
+  <%= f.input :hashtag %>
+  <%= f.input :user_id %>
+  <%= f.input :user_ig_media_id %>
+  <%= f.input :likes_received %>
+  <%= f.input :launched_at %>
+  <%= f.input :stopped_at %>
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>

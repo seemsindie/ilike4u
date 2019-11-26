@@ -1,0 +1,9 @@
+index.html.erb
+<H1>Users</H1>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= user.ig_user_id %></td>
+      </tr>
+    <% end %>
+
