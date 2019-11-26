@@ -1,7 +1,7 @@
 require 'instabot'
 
 bot = Instabot.new :manual
-bot.login("sogadgets", "Tigerbaum1.")
+bot.login("", "")
 
 bot.follow('25307945732')
 # bot.unfollow('user_id')
