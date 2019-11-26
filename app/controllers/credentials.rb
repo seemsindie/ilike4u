@@ -1,2 +1,2 @@
-iusername = "sogadgets"
-ipassword = "Tigerbaum1."
+iusername = " "
+ipassword = ""
