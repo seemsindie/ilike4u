@@ -18,8 +18,8 @@ browser.goto "instagram.com/accounts/login/"
 
 # Navigate to Username and Password fields, inject info
 puts "Logging in..."
-browser.text_field(:name => "username").set "#{sogadgets}"
-browser.text_field(:name => "password").set "#{Tigerbaum1.}"
+browser.text_field(:name => "username").set "#{}"
+browser.text_field(:name => "password").set "#{}"
 
 # Click Login Button
 browser.button(:class => ['sqdOP', 'L3NKy', 'y3zKF']).click
@@ -30,7 +30,7 @@ puts "We're in #hackerman"
 loop do
   users.each { |val|
     # Navigate to user's page
-    browser.goto "instagram.com/ilike4u326/"
+    browser.goto "instagram.com//"
 
     # If not following then follow
     if browser.button(:class => ['_5f5mN','jIbKX','_6VtSN','yZn4P']).exists?
