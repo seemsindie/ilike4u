@@ -6,7 +6,7 @@ require_relative 'credentials' # Pulls in login credentials from credentials.rb
 
 username = iusername
 password = password
-users = ["josephineskriver", "theweeknd", "kendalljenner", "karliekloss"]
+users = ["nfl", "baseball", "nba", "flowers"]
 follow_counter = 0
 unfollow_counter = 0
 MAX_UNFOLLOWS = 200
@@ -18,11 +18,12 @@ browser.goto "instagram.com/accounts/login/"
 
 # Navigate to Username and Password fields, inject info
 puts "Logging in..."
-browser.text_field(:name => "username").set "#{}"
-browser.text_field(:name => "password").set "#{}"
+browser.text_field(:name => "username").set ""
+browser.text_field(:name => "password").set ""
 
 # Click Login Button
 browser.button(:class => ['sqdOP', 'L3NKy', 'y3zKF']).click
+browser.button(:class => ['aOOlW', 'HoLwm']).click #not now popup
 sleep(2)
 puts "We're in #hackerman"
 
@@ -59,6 +60,37 @@ Pry.start(binding)
 # Top 100 users on Instagram
 # users = ['instagram', 'selenagomez', 'arianagrande', 'taylorswift', 'beyonce', 'kimkardashian', 'cristiano', 'kyliejenner', 'justinbieber', 'kendalljenner', 'nickiminaj', 'natgeo', 'neymarjr', 'nike', 'leomessi','khloekardashian', 'mileycyrus', 'katyperry', 'jlo', 'ddlovato', 'kourtneykardash', 'victoriasecret', 'badgalriri', 'fcbarcelona', 'realmadrid', 'theellenshow', 'justintimberlake', 'zendaya' 'caradelevingne', '9gag', 'chrisbrownofficial', 'vindiesel', 'champagnepapi', 'davidbeckham', 'shakira', 'gigihadid', 'emmawatson', 'jamesrodiguez10', 'kingjames', 'garethbale11', 'nikefootball', 'adele', 'zacefron', 'vanessahudgens', 'ladygaga', 'maluma', 'nba', 'nasa', 'rondaldinho', 'luissuarez9', 'zayn', 'shawnmendes', 'adidasfootball', 'brumarquezine', 'hm', 'harrystyles','chanelofficial', 'ayutingting92', 'letthelordbewithyou', 'niallhoran', 'anitta', 'hudabeauty', 'camerondallas', 'adidasoriginals', 'marinaruybarbosa', 'lucyhale', 'karimbenzema', 'princessyahrini', 'zara', 'nickyjampr', 'onedirection', 'andresiniesta8', 'raffinagita1717', 'krisjenner', 'manchesterunited', 'natgeotravel', 'marcelottwelve', 'deepikapadukone', 'snoopdogg', 'davidluiz_4', 'kalbiminrozeti', 'priyankachopra', 'ashleybenson', 'shaym', 'lelepons', 'prillylatuconsina96','louisvuitton','britneyspears', 'sr4official', 'jbalvin', 'laudyacynthiabella', 'ciara', 'stephencurry30', 'instagrambrasil']
 
-photo  = browser.div(:class => ['_9AhH0']).click
+photo_target  = browser.div(:class => ['_9AhH0']).click
 like = browser.span(:class => ['fr66n']).click
 unlike = browser.span(:class => ['FY9nT', 'fr66n']).click
+search = browser.text_field(:value => "").set "test"
+validate hashtag = browser.send_keys :enter
+
+
+def login
+  browser = Watir::Browser.new :chrome, switches: ['--incognito']
+  sleep(1)
+  browser.goto "instagram.com/accounts/login/"
+  puts "Logging in..."
+  browser.text_field(:name => "username").set ""
+  browser.text_field(:name => "password").set ""
+  sleep(1)
+  browser.button(:class => ['sqdOP', 'L3NKy', 'y3zKF']).click
+  sleep(1)
+  if browser.button(:class => ['aOOlW', 'HoLwm']).exists?
+    browser.button(:class => ['aOOlW', 'HoLwm']).click
+  sleep(1)
+end
+
+def liking
+  browser.goto "instagram.com/karliekloss/"
+  sleep(3.03)
+  browser.div(:class => ['_9AhH0']).click
+  sleep(3.09)
+  browser.span(:class => ['fr66n']).click
+  sleep(3.12)
+end
+
+def following
+
+end
