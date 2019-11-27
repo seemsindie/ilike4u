@@ -7,6 +7,8 @@ gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.2.3'
 gem 'redis'
+gem 'devise'
+gem 'bootstrap_form'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
@@ -15,9 +17,15 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'jquery-rails'
+gem 'watir', '~> 6.16'
+gem 'pry', '~> 0.12.2'
+gem 'selenium-webdriver', '~> 3.142', '>= 3.142.6'
+gem 'chromedriver-helper', '~> 2.1', '>= 2.1.1'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :development, :test do

@@ -1,0 +1,10 @@
+<H1>New Given_Likes Page</H1>
+
+<%= simple_form_for [@user, @job, @given_like] do |f| %>
+  <%= f.input :ig_media_id %>
+  <%= f.input :ig_user_id %>
+  <%= f.input :job_id %>
+
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>
+
