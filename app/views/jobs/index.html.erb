@@ -1,42 +1,48 @@
-<H1>JOBS index.html.erb</H1>
+<div class="hero-image">
+  <div class="hero-text">
 
-<table>
-  <thead>
-    <tr>
-      <th>Image url| </th>
-      <th>Caption| </th>
-      <th>Hashtag| </th>
-      <th>User| </th>
-      <th>User ig media| </th>
-      <th>Likes received| </th>
-      <th>Launched at| </th>
-      <th>Stopped at| </th>
+    <H1>JOBS index.html.erb</H1>
 
-    </tr>
-  </thead>
+    <table>
+      <thead>
+        <tr>
+          <th>Image url| </th>
+          <th>Caption| </th>
+          <th>Hashtag| </th>
+          <th>User| </th>
+          <th>User ig media| </th>
+          <th>Likes received| </th>
+          <th>Launched at| </th>
+          <th>Stopped at| </th>
+
+        </tr>
+      </thead>
 
 
-  <tbody>
-    <% @jobs.each do |job| %>
-      <tr>
-        <td><%= job.image_url %></td>
-        <td><%= job.caption %></td>
-        <td><%= job.hashtag %></td>
-        <td><%= job.user_id %></td>
-        <td><%= job.user_ig_media_id %></td>
-        <td><%= job.likes_received %></td>
-        <td><%= job.launched_at %></td>
-        <td><%= job.stopped_at %></td>
 
-        <td><%= link_to 'Show Info',  user_job_path(params[:user_id], job.id) %></td>
-        <td><%= link_to 'Edit Info',   edit_user_job_path(params[:user_id], job.id) %></td>
+      <tbody>
+            <% @jobs.each do |job| %>
+              <tr>
+                <td><%= job.image_url %></td>
+                <td><%= job.caption %></td>
+                <td><%= job.hashtag %></td>
+                <td><%= job.user_id %></td>
+                <td><%= job.user_ig_media_id %></td>
+                <td><%= job.likes_received %></td>
+                <td><%= job.launched_at %></td>
+                <td><%= job.stopped_at %></td>
 
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+                <td><%= link_to 'Show Info',  user_job_path(params[:user_id], job.id) %></td>
+                <td><%= link_to 'Edit Info',   edit_user_job_path(params[:user_id], job.id) %></td>
 
-<p><%= link_to 'Create Job',  new_user_job_path %></p>
+              </tr>
+            <% end %>
 
+      </tbody>
+    </table>
+
+    <p><%= link_to 'Create Job',  new_user_job_path %></p>
+  </div>
+</div>
 
 
