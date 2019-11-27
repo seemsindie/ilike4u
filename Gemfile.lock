@@ -161,10 +161,10 @@ GEM
     rb-inotify (0.10.0)
       ffi (~> 1.0)
     redis (4.1.3)
+    regexp_parser (1.6.0)
     responders (3.0.0)
       actionpack (>= 5.0)
       railties (>= 5.0)
-    regexp_parser (1.6.0)
     rubyzip (2.0.0)
     sassc (2.2.1)
       ffi (~> 1.9)
@@ -225,8 +225,8 @@ DEPENDENCIES
   binding_of_caller
   bootsnap
   bootstrap_form
-  devise
   chromedriver-helper (~> 2.1, >= 2.1.1)
+  devise
   dotenv-rails
   font-awesome-sass (~> 5.6.1)
   jbuilder (~> 2.0)
