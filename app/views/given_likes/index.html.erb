@@ -1,0 +1,9 @@
+Given Likes index.html.erb
+<tbody>
+    <% @given_likes.each do |gl| %>
+      <tr>
+        <p><td>Liked Media ID: <%= gl.ig_media_id %></td></p>
+        <p><td>User who liked: <%= gl.ig_user_id %></td></p>
+        <p><td>Job ID:<%= gl.job_id %></td></p>
+      </tr>
+    <% end %>
