@@ -41,7 +41,7 @@ a:hover, a:active, a:link, a:visited {
 
 .background-image {
   background-image: asset-url('background.jpg');
-  min-height: calc(100vh-400px);
+  min-height: calc(100vh-75px);
   display: flex;
   justify-content: center;
   background-size: cover;
