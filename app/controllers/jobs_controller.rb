@@ -13,6 +13,8 @@ class JobsController < ApplicationController
     @job = Job.new(job_params)
     @job.user = @user
     @job.save
+    Bot.insta_bot(@job)
+
     redirect_to user_jobs_path(@user)
   end
 
@@ -35,6 +37,6 @@ class JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:image_url, :caption, :hastag, :user_id, :likes_received, :launched_at, :stopped_at)
+    params.require(:job).permit(:caption, :hashtag, :user_id, :likes_received, :launched_at, :instagram_username, :instagram_password)
   end
 end
