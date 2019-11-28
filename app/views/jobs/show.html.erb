@@ -7,3 +7,6 @@ Job Show
   <p><%= @job.likes_received %></p>
   <p><%= @job.launched_at %></p>
   <p><%= @job.stopped_at %></p>
+<% t = Time.now + 2700%>
+
+<div class="timer" data-time='<%= t.strftime("%b %d, %Y %H:%M:%S"); %>'></div>
