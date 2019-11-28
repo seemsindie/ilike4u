@@ -9,5 +9,6 @@ const initUpdateNavbarOnScroll = () => {
       }
     });
   }
+}
 
-export { initUpdateNavbarOnScroll };
+export{initUpdateNavbarOnScroll};
