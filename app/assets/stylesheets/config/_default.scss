@@ -3,13 +3,19 @@
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 100%;
 }
 
 body {
   background: $backgroundColor;
-  font-size: 14px;
+  background-color: black;
+  font-size: 18px;
   font-size: 1.4rem;
+  height: 100%;
+  width: 100%;
+}
+
+.main {
 }
 
 h1 {
@@ -34,13 +40,10 @@ a:hover, a:active, a:link, a:visited {
 }
 
 .background-image {
-   width: 100vw;
-   height: 100vh;
-   position: absolute;
-   display: flex;
-   justify-content: center;
-   object-fit: cover;
-   top: 0;
-   z-index: -2;
+  background-image: asset-url('background.jpg');
+  min-height: calc(100vh-400px);
+  display: flex;
+  justify-content: center;
+  background-size: cover;
   }
 
