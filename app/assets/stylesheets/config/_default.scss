@@ -3,13 +3,19 @@
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 100%;
 }
 
 body {
   background: $backgroundColor;
-  font-size: 14px;
+  background-color: black;
+  font-size: 18px;
   font-size: 1.4rem;
+  height: 100%;
+  width: 100%;
+}
+
+.main {
 }
 
 h1 {
@@ -32,3 +38,12 @@ a:hover, a:active, a:link, a:visited {
 .control-label {
   display: none;
 }
+
+.background-image {
+  background-image: asset-url('background.jpg');
+  min-height: calc(100vh-75px);
+  display: flex;
+  justify-content: center;
+  background-size: cover;
+  }
+
