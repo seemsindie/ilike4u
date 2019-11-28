@@ -7,7 +7,7 @@
     "popper.js": "^1.16.0"
   },
   "devDependencies": {
-    "bootstrap": "^4.3.1",
+    "bootstrap": "^4.4.1",
     "webpack-dev-server": "^3.9.0"
   }
 }
