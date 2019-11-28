@@ -5,7 +5,6 @@ require 'chromedriver-helper'
 
 class Bot
   def self.insta_bot(job)
-  hashtag = "football"
   like_counter = 0
   photo_liked = []
   user_liked = []
@@ -29,7 +28,7 @@ class Bot
   2.times do
     puts "--------- #{Time.now} Starting loop----------"
     # goes on the hashtag
-    browser.goto "https://www.instagram.com/explore/tags/#{hashtag}"
+    browser.goto "https://www.instagram.com/explore/tags/#{job.hashtag}"
     sleep(3.03)
     # goes on the picture
     browser.divs(class: ['_9AhH0'])[9].click
