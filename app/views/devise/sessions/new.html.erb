@@ -28,3 +28,38 @@
   </div>
 </div>
 
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 px-lg-3 px-0">
+      <div class="banner-form-w3 ml-lg-5">
+        <div class="padding">
+          <form action="#" method="post">
+            <h5 class="mb-3">Log in</h5>
+            <%= bootstrap_form_for(resource,
+             as: resource_name,
+             url: session_path(resource_name)) do |f| %>
+
+            <%= f.email_field :email,
+            autofocus: true,
+            class: 'form-control',
+              placeholder: 'email' %>
+
+              <%= f.password_field  :password,
+              autocomplete: "off",
+              class: 'form-control',
+                placeholder: 'password' %>
+
+
+                <% if devise_mapping.rememberable? -%>
+                <%= f.check_box :remember_me %>
+                <% end -%>
+              <button class="btn"> login </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
