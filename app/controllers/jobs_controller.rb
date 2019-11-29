@@ -12,7 +12,9 @@ class JobsController < ApplicationController
     @user = User.find(params[:user_id])
     @job = Job.new(job_params)
     @job.user = @user
+
     @job.save
+
     Bot.insta_bot(@job)
 
     redirect_to user_jobs_path(@user)

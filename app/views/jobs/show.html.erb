@@ -7,14 +7,17 @@
 
 
 Job Show
-  <h2><%= @job.image_url %></h2>
-  <p><%= @job.caption %></p>
-  <p><%= @job.hashtag %></p>
-  <p><%= @job.user_id %></p>
-  <p><%= @job.user_ig_media_id %></p>
-  <p><%= @job.likes_received %></p>
-  <p><%= @job.launched_at %></p>
-  <p><%= @job.stopped_at %></p>
-<% t = Time.now + 2700%>
+<h2><%= @job.image_url %></h2>
+<p><%= @job.caption %></p>
+<p><%= @job.hashtag %></p>
+<p><%= @job.user_id %></p>
+<p><%= @job.user_ig_media_id %></p>
+<p><%= @job.likes_received %></p>
+<p><%= @job.launched_at %></p>
+<p><%= @job.stopped_at %></p>
 
-<div class="timer" data-time='<%= t.strftime("%b %d, %Y %H:%M:%S"); %>'></div>
+
+<%= @job.created_at + 60.minutes %>
+<%= newtime =  @job.created_at + 105.minutes %>
+<div class="timer" data-time='<%= newtime.strftime("%b %d, %Y %H:%M:%S"); %>'></div>
+

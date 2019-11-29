@@ -15,11 +15,12 @@ class Bot
 
     browser.goto "instagram.com/accounts/login/"
     sleep(3.03)
-
+    
     puts "Logging in..."
 
     browser.text_field(name: "username").set " #{job.instagram_username} "
     browser.text_field(name: "password").set " #{job.instagram_password} "
+
     sleep(3.09)
 
     browser.button(class: ['sqdOP', 'L3NKy', 'y3zKF']).click
