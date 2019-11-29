@@ -66,7 +66,7 @@ class Bot
       sleep(3)
 
       puts "--------- #{Time.now} Closing loop----------"
-      sleep(3)
+      sleep(45)
 
       puts "You liked  #{like_counter}"
       puts "You liked the following url : #{photo_liked}"
