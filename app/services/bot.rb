@@ -36,7 +36,7 @@ class Bot
     photo_liked << browser.url
     sleep(1)
     user_liked = browser.h2(class: ['_6lAjh']).text
-    puts "username #{test2}"
+    # puts "username #{test2}"
     sleep(3.09)
     user_hashtags << browser.div(class: ['C4VMK']).span.text.split("\n")[1].split(" ")
     puts " #{user_hashtags} "
@@ -56,7 +56,7 @@ class Bot
   end
   end
 end
-puts "You liked  #{like_counter}"
-puts "You liked the following url : #{photo_liked}"
-puts "You liked the following profiles : #{test2}"
-puts " #{user_hashtags} "
+# puts "You liked  #{like_counter}"
+# puts "You liked the following url : #{photo_liked}"
+# puts "You liked the following profiles : #{test2}"
+# puts " #{user_hashtags} "
