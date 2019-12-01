@@ -17,7 +17,17 @@ Job Show
 <p><%= @job.stopped_at %></p>
 
 
-<%= @job.created_at + 60.minutes %>
-<%= newtime =  @job.created_at + 105.minutes %>
-<div class="timer" data-time='<%= newtime.strftime("%b %d, %Y %H:%M:%S"); %>'></div>
+<div class="py-5">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="rounded bg-gradient-1 text-white shadow p-5 text-center mb-5">
+                    <p class="mb-4 font-weight-bold text-uppercase">Time left before bots stop liking</p>
+                    <div id="clock-b" class="countdown-circles d-flex flex-wrap justify-content-center pt-4"></div>
+                    <%= @job.created_at + 60.minutes %>
+                    <%= newtime =  @job.created_at + 105.minutes %>
+                    <div class="timer" data-time='<%= newtime.strftime("%b %d, %Y %H:%M:%S"); %>'></div>
 
+                </div>
+            </div>
+        </div>
+</div>
