@@ -1,11 +1,6 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-<div class="container margin-top-50 col-lg-5 col-xl-5 mx-auto">
+<div class="container margin-top-50 col-lg-5 col-xl-5 mx-auto mt-5">
   <!--  Displaying the post that the bot is currently linking for -->
-  <h2>Currently improving the stats</h2>
+  <h2 class="pt-5">Currently improving the stats</h2>
   <h2>for this post:</h2>
   <% if @job.image_url != nil %>
   <img src="<%= @job.image_url + "media/?size=m" %>" alt="Your latest Post" class="img-thumbnail">
@@ -40,9 +35,3 @@
     </a>
   </div>
 </div>
-
-<div class="container">
-  <h2>We recently liked</h2>
-  <% @job.given_likes.each do |given_like| %>
-    <img src="<%= given_like.ig_media_id + "media/?size=t" %>" alt="">
-  <% end %>

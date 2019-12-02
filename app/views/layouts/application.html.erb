@@ -15,18 +15,14 @@
   </head>
 
   <body class="text-center">
+    <%= render 'shared/navbar' %>
     <div class="cover-container h-100 p-3 mx-auto flex-column" style="background-image: url(<%= asset_path 'background.jpg' %>); background-size: cover;">
-      <%= render 'shared/navbar' %>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
 
         <%= yield %>
 
-      <footer class="mastfoot mt-auto">
-        <div class="inner">
-          <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-        </div>
-      </footer>
+      <%= render 'shared/footer' %>
       <%= javascript_include_tag 'application', 'data-tubolinks-track': 'reload' %>
       <%= javascript_pack_tag 'application' %>
     </div>
