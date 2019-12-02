@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => {:registrations => "registrations"}
-  root to: 'pages#home'
+  root to: 'jobs#new'
   resources :users, except: :delete do
     resources :jobs, except: :delete do
      resources :given_likes, :delete

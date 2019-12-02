@@ -1,10 +1,12 @@
 class JobsController < ApplicationController
+
+  before_action :authenticate_user!
   def index
     @jobs = Job.all
   end
 
   def new
-    @user = User.find(params[:user_id])
+    @user = current_user
     @job = Job.new
   end
 

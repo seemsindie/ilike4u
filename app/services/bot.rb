@@ -50,6 +50,7 @@ class Bot
       end
       # close the page
       browser.button(class: ['ckWGn']).click
+      current_like = GivenLike.create!(ig_media_id: "#{photo_liked}", ig_user_id: "#{user_liked}", job: job)
       sleep(3)
       puts "--------- #{Time.now} Closing loop----------"
       sleep(45)

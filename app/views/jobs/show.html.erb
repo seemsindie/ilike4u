@@ -16,6 +16,16 @@ Job Show
 <p><%= @job.launched_at %></p>
 <p><%= @job.stopped_at %></p>
 
+<tbody>
+<% @job.given_likes.each do |job| %>
+<tr>
+<p><%= job.ig_media_id %></p>
+<p><%= job.ig_user_id %></p>
+</tr>
+<% end %>
+
+</tbody>
+
 
 <%= @job.created_at + 60.minutes %>
 <%= newtime =  @job.created_at + 105.minutes %>
