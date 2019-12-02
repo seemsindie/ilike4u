@@ -12,7 +12,8 @@ class Bot
     # hashtag = "cat"
 
     # Open Browser, Navigate to Login page
-    browser = Watir::Browser.new(:chrome, options: { headless: ['--incognito'], binary: ENV['GOOGLE_CHROME_PATH'] })
+    browser = Watir::Browser.new(:chrome, options: { headless: ['--incognito'], args: ['no-sandbox'] })
+    # , binary: ENV['GOOGLE_CHROME_PATH']
     sleep(3)
     browser.goto "instagram.com/accounts/login/"
     sleep(3.03)
