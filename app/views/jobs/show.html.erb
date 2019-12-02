@@ -5,12 +5,27 @@
 <br>
 
 <div class="container margin-top-50">
+  <!--  Displaying the post that the bot is currently linking for -->
   <h1>The bot is liking for your post:</h1>
   <img src="<%= @job.image_url + "media/?size=t" %>" alt="Your latest Post">
   <%= @job.caption %>
   <h1>and for the #:</h1>
   <a href="<%= "https://www.instagram.com/explore/tags/" + @job.hashtag %>" target="_blank"><%= "#" + @job.hashtag %></a>
+
+  <!--  Displaying the likes given by the bot for this post -->
+  <h1>The bot liked the following posts so far</h1>
+  <ul>
+    <% @job.given_likes.each do |given_like| %>
+      <li>
+        <a href="<%= given_like.ig_media_id %>" target="_blank" >
+          <img src="<%= given_like.ig_media_id + "media/?size=t" %>" alt="Your latest Post">
+        </a>
+      </li>
+    <% end %>
+  </ul>
 </div>
+
+
 
 <!--   <h2>We recently liked</h2>
   <h2><img src=<%#= @job.image_url %> </h2>
