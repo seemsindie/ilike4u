@@ -7,8 +7,10 @@
 <div class="container margin-top-50">
   <!--  Displaying the post that the bot is currently linking for -->
   <h1>The bot is liking for your post:</h1>
+  <% if @job.image_url != nil %>
   <img src="<%= @job.image_url + "media/?size=t" %>" alt="Your latest Post">
   <%= @job.caption %>
+  <% end %>
   <h1>and for the #:</h1>
   <a href="<%= "https://www.instagram.com/explore/tags/" + @job.hashtag %>" target="_blank"><%= "#" + @job.hashtag %></a>
 
