@@ -5,10 +5,10 @@ require 'chromedriver-helper'
 
 class Bot
   def self.insta_bot(job)
-    like_counter = 0
-    photo_liked = []
-    user_liked = []
-    user_hashtags = []
+    # like_counter = 0
+    # # photo_liked = []
+    # user_liked = []
+    # user_hashtags = []
     # hashtag = "cat"
 
     # Open Browser, Navigate to Login page
@@ -35,17 +35,18 @@ class Bot
       # goes on the picture
       browser.divs(class: ['_9AhH0'])[9].click
       sleep(1)
-      photo_liked << browser.url
-      sleep(1)
-      user_liked << browser.h2(class: ['_6lAjh']).text
-      sleep(3.09)
-      user_hashtags << browser.div(class: ['C4VMK']).span.text.match(/#.+/).to_s.split(" ")
+      GivenLike.create(ig_media_id: browser.url, job_id: job.id)
+      # given_likes.ig_media_id = browser.url
+      # sleep(1)
+      # user_liked << browser.h2(class: ['_6lAjh']).text
+      # sleep(3.09)
+      # user_hashtags << browser.div(class: ['C4VMK']).span.text.match(/#.+/).to_s.split(" ")
 
       # checked if liked
       if browser.span(class: ['glyphsSpriteHeart__outline__24__grey_9', 'u-__7']).exists?
         # likes
         browser.span(class: ['fr66n']).click
-        like_counter += 1
+        # like_counter += 1
         sleep(3.12)
       end
       # close the page
