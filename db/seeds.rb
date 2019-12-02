@@ -32,6 +32,3 @@ second_like = GivenLike.new(
   job_id: techno.id
 )
 second_like.save!
-
-
-
