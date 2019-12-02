@@ -3,41 +3,45 @@
 <br>
 <br>
 <br>
-<div class="container margin-top-50">
-      <div class="row">
-        <div class="col-lg-10 col-xl-9 mx-auto">
-            <div class="rounded bg-gradient-1 text-white shadow p-5 text-center mb-5">
-                <p class="mb-4 font-weight-bold text-uppercase">Time left before bots stop liking</p>
-                <h5>images who appeared under #:</h5>
-                <a href="<%= "https://www.instagram.com/explore/tags/" + @job.hashtag %>" target="_blank"><%= "#" + @job.hashtag %></a>
-
-                <div id="clock-b" class="countdown-circles d-flex flex-wrap justify-content-center pt-4"></div>
-                <%#= @job.created_at + 60.minutes %>
-                <%#= newtime =  @job.created_at + 105.minutes %>
-                <div class="timer" data-time='<%#= newtime.strftime("%b %d, %Y %H:%M:%S"); %>'></div>
-            </div>
-        </div>
-      </div>
+<div class="container margin-top-50 col-lg-5 col-xl-5 mx-auto">
   <!--  Displaying the post that the bot is currently linking for -->
-  <h3>Last post on your Wall</h3>
-  <img src="<%= @job.image_url + "media/?size=t" %>" alt="Your latest Post" class="img-thumbnail">
-  <%= @job.caption %>
+  <h2>Currently improving the stats</h2>
+  <h2>for this post:</h2>
+  <img src="<%= @job.image_url + "media/?size=m" %>" alt="Your latest Post" class="img-thumbnail">
+  <br>
+  <div class="row">
+    <div class="col-lg-12 col-xl-9 mx-auto">
+      <div class="rounded bg-gradient-1 text-white shadow p-5 text-center mb-5">
+        <!--  Displaying the likes given by the bot for this post -->
+        <p class="mb-4 font-weight-bold text-uppercase">Time left before bot stop's liking</p>
+        <h5>images who appeared under #:</h5>
+        <a href="<%= "https://www.instagram.com/explore/tags/" + @job.hashtag %>" target="_blank"><%= "#" + @job.hashtag %></a>
 
+        <div id="clock-b" class="countdown-circles d-flex flex-wrap justify-content-center pt-4"></div>
+        <%#= @job.created_at + 60.minutes %>
+        <%#= newtime =  @job.created_at + 105.minutes %>
+        <div class="timer" data-time='<%#= newtime.strftime("%b %d, %Y %H:%M:%S"); %>'></div>
+      </div>
+    </div>
+  </div>
   <!--  Displaying the likes given by the bot for this post -->
-  <h1>The bot liked the following posts so far</h1>
+  <h2>So far</h2>
+  <h2>The bot liked the following posts</h2>
 
   <div class="user-tabs">
     <a class="tab active" href="">
-    <% @job.given_likes.each do |given_like| %>
-        <a href="<%= given_like.ig_media_id %>" target="_blank" >
-          <img src="<%= given_like.ig_media_id + "media/?size=t" %>" alt="Your latest Post" class="float img-thumbnail">
-        </a>
-        <% end %>
+      <% @job.given_likes.each do |given_like| %>
+      <a href="<%= given_like.ig_media_id %>" target="_blank" >
+        <img src="<%= given_like.ig_media_id + "media/?size=t" %>" alt="Your latest Post" class="float img-thumbnail">
+      </a>
+      <% end %>
     </a>
   </div>
+</div>
 
-  <h1>who appeared under #:</h1>
-  <a href="<%= "https://www.instagram.com/explore/tags/" + @job.hashtag %>" target="_blank"><%= "#" + @job.hashtag %></a>
+
+
+
 
 
 
@@ -75,5 +79,5 @@
                 <div class="timer" data-time='<%#= newtime.strftime("%b %d, %Y %H:%M:%S"); %>'></div>
             </div>
         </div>
-    </div> -->
+      </div> -->
 
