@@ -5,7 +5,6 @@
 <br>
 <div class="container margin-top-50 col-lg-5 col-xl-5 mx-auto">
   <!--  Displaying the post that the bot is currently linking for -->
-
   <h2>Currently improving the stats</h2>
   <h2>for this post:</h2>
   <% if @job.image_url != nil %>
@@ -27,10 +26,10 @@
       </div>
     </div>
   </div>
+
   <!--  Displaying the likes given by the bot for this post -->
   <h2>So far</h2>
   <h2>The bot liked the following posts</h2>
-
   <div class="user-tabs">
     <a class="tab active" href="">
       <% @job.given_likes.each do |given_like| %>
@@ -42,45 +41,8 @@
   </div>
 </div>
 
-
 <div class="container">
   <h2>We recently liked</h2>
   <% @job.given_likes.each do |given_like| %>
     <img src="<%= given_like.ig_media_id + "media/?size=t" %>" alt="">
   <% end %>
-
-<!--   <h2>We recently liked</h2>
-  <h2><img src=<%#= @job.image_url %> </h2>
-  <img src="https://www.instagram.com/p/B5j92TyH_l2/media/?size=t" alt="..." class="img-thumbnail">
-
-  <br>
-  <br> -->
-<!--   <p><%#= @job.caption %></p>
-  <p><%#= @job.hashtag %></p>
-  <p><%#= @job.user_id %></p>
-  <p><%#= @job.user_ig_media_id %></p>
-  <p><%#= @job.likes_received %></p>
-  <p><%#= @job.launched_at %></p>
-  <p><%#= @job.stopped_at %></p> -->
-<!--
-    <div class="row justify-content-center">
-      <div class="col-4 font-weight-bold text-right"> Under # </div>
-      <div class="col-4 text-left text-uppercase"> <%#= @job.hashtag %> </div>
-    </div>
-    <br>
-      <h5> And Received </h5>
-        <div class="justify-content-center"> <%#= @job.likes_received %> likes in return </div>
-    </div>
-    <br>
-    <div class="row">
-        <div class="col-lg-10 col-xl-9 mx-auto">
-            <div class="rounded bg-gradient-1 text-white shadow p-5 text-center mb-5">
-                <p class="mb-4 font-weight-bold text-uppercase">Time left before bots stop liking</p>
-                <div id="clock-b" class="countdown-circles d-flex flex-wrap justify-content-center pt-4"></div>
-                <%#= @job.created_at + 60.minutes %>
-                <%#= newtime =  @job.created_at + 105.minutes %>
-                <div class="timer" data-time='<%#= newtime.strftime("%b %d, %Y %H:%M:%S"); %>'></div>
-            </div>
-        </div>
-      </div> -->
-
