@@ -26,10 +26,12 @@
 </div>
 
 
+<div class="container">
+  <h2>We recently liked</h2>
+  <% @job.given_likes.each do |given_like| %>
+    <img src="<%= given_like.ig_media_id + "media/?size=t" %>" alt="">
+  <% end %>
 
-<!--   <h2>We recently liked</h2>
-  <h2><img src=<%#= @job.image_url %> </h2>
-  <img src="https://www.instagram.com/p/B5j92TyH_l2/media/?size=t" alt="..." class="img-thumbnail">
   <br>
   <br> -->
 <!--   <p><%#= @job.caption %></p>
