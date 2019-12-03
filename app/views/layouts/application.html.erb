@@ -1,39 +1,30 @@
+
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <head>
+    <meta charset="UFT-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>ILIKE4U</title>
-  <%= csrf_meta_tags %>
-  <%= action_cable_meta_tag %>
-  <script src="https://cdn.jsdelivr.net/npm/timezz/dist/timezz.min.js"></script>
-  <%= stylesheet_link_tag 'application', media: 'all' %>
-  <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
-</head>
+    <title>ILIKE4U</title>
+    <%= csrf_meta_tags %>
+    <%= action_cable_meta_tag %>
+    <script src="https://cdn.jsdelivr.net/npm/timezz/dist/timezz.min.js"></script>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+  </head>
 
-<body class="text-center">
-
-  <div class="cover-container d-flex h-100 p-3 mx-auto flex-column background-image">
-
+  <body class="text-center">
     <%= render 'shared/navbar' %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-    <main role="main" class="inner cover">
-      <%= yield %>
-    </main>
-
-    <footer class="mastfoot mt-auto">
-      <div class="inner">
-        <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+    <div class="cover-container p-3 mx-auto flex-column background-image">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <div class=" main-container">
+         <%= yield %>
       </div>
-    </footer>
-  </div>
-  <%= javascript_include_tag 'application', 'data-tubolinks-track': 'reload' %>
-  <%= javascript_pack_tag 'application' %>
-
-</body>
+      <%= render 'shared/footer' %>
+      <%= javascript_include_tag 'application', 'data-tubolinks-track': 'reload' %>
+      <%= javascript_pack_tag 'application' %>
+    </div>
+  </body>
 </html>
