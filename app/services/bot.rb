@@ -16,18 +16,18 @@ class Bot
     # , binary: ENV['GOOGLE_CHROME_PATH']
     #sleep(3)
     browser.goto "instagram.com/accounts/login/"
-    sleep(1)
+    sleep(0.5)
     puts "Logging in..."
     browser.text_field(name: "username").set "#{job.instagram_username}"
     browser.text_field(name: "password").set "#{job.instagram_password}"
-    sleep(1)
+    sleep(0.5)
     browser.button(class: ['sqdOP', 'L3NKy', 'y3zKF']).click
-    sleep(1)
+    sleep(2)
     if browser.button(class: ['aOOlW', 'HoLwm']).exists?
+      sleep(3)
       browser.button(class: ['aOOlW', 'HoLwm']).click
-      #sleep(3)
     end
-    #sleep(3)
+
     puts "----Get the post----"
 
     browser.goto "https://www.instagram.com/#{job.instagram_username}"
