@@ -33,6 +33,7 @@ class Bot
     browser.goto "https://www.instagram.com/#{job.instagram_username}"
     # goes our post the picture
     browser.div(class: ['_9AhH0']).click
+    sleep(1)
     job.image_url = browser.url
     job.save
 
@@ -64,7 +65,7 @@ class Bot
       browser.button(class: ['ckWGn']).click
       sleep()
       puts "--------- #{Time.now} Closing loop----------"
-      sleep(23)
+      sleep(15)
     end
   end
 end
