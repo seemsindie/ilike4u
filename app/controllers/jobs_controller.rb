@@ -2,7 +2,7 @@ class JobsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @jobs = Job.all
+    @jobs = Job.where(user_id: current_user)
   end
 
   def new
@@ -23,7 +23,6 @@ class JobsController < ApplicationController
   end
 
   def show
-    @user_id = User.find(current_user)
     @job = Job.find(params[:id])
   end
 
