@@ -63,9 +63,8 @@ class Bot
       end
       # close the page
       browser.button(class: ['ckWGn']).click
-      sleep()
       puts "--------- #{Time.now} Closing loop----------"
-      sleep(15)
+      sleep(5)
     end
   end
 end
