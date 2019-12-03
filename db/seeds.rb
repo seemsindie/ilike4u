@@ -32,3 +32,22 @@ second_like = GivenLike.new(
   job_id: techno.id
 )
 second_like.save!
+
+third_like = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5m4d02H5qW/",
+  job_id: techno.id
+)
+third_like.save!
+
+fourth_like = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5myy60HqpR/",
+  job_id: techno.id
+)
+fourth_like.save!
+
+fifth_like = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5mZCmziUg8/",
+  job_id: techno.id
+)
+fifth_like.save!
+
