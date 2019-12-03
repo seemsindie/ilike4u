@@ -5,7 +5,7 @@ require 'chromedriver-helper'
 
 class Bot
   def self.insta_bot(job)
-    # like_counter = 0
+    like_counter = 0
     # # photo_liked = []
     # user_liked = []
     # user_hashtags = []
@@ -16,13 +16,13 @@ class Bot
     # , binary: ENV['GOOGLE_CHROME_PATH']
     sleep(3)
     browser.goto "instagram.com/accounts/login/"
-    sleep(3.03)
+    sleep(5)
     puts "Logging in..."
     browser.text_field(name: "username").set "#{job.instagram_username}"
     browser.text_field(name: "password").set "#{job.instagram_password}"
-    sleep(3.09)
+    sleep(3)
     browser.button(class: ['sqdOP', 'L3NKy', 'y3zKF']).click
-    sleep(3.12)
+    sleep(3)
     if browser.button(class: ['aOOlW', 'HoLwm']).exists?
       browser.button(class: ['aOOlW', 'HoLwm']).click
       sleep(3)
@@ -30,13 +30,14 @@ class Bot
     sleep(3)
     2.times do
       puts "--------- #{Time.now} Starting loop----------"
+      sleep(5)
       # goes on the hashtag
       browser.goto "https://www.instagram.com/explore/tags/#{job.hashtag}"
       sleep(3.03)
       # goes on the picture
       browser.divs(class: ['_9AhH0'])[9].click
-      sleep(1)
-      GivenLike.create(ig_media_id: browser.url, job_id: job.id)
+      sleep(5)
+
       # given_likes.ig_media_id = browser.url
       # sleep(1)
       # user_liked << browser.h2(class: ['_6lAjh']).text
@@ -47,15 +48,15 @@ class Bot
       if browser.span(class: ['glyphsSpriteHeart__outline__24__grey_9', 'u-__7']).exists?
         # likes
         browser.span(class: ['fr66n']).click
-        # like_counter += 1
-        sleep(3.12)
+        GivenLike.create(ig_media_id: browser.url, job_id: job.id)
+        puts like_counter += 1
+        sleep(5)
       end
       # close the page
       browser.button(class: ['ckWGn']).click
-      sleep(3)
+      sleep(5)
       puts "--------- #{Time.now} Closing loop----------"
-      sleep(45)
+      sleep(30)
     end
   end
 end
-
