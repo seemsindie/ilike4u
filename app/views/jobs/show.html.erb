@@ -20,9 +20,9 @@
         <a href="<%= "https://www.instagram.com/explore/tags/" + @job.hashtag %>" target="_blank"><%= "#" + @job.hashtag %></a>
 
         <div id="clock-b" class="countdown-circles d-flex flex-wrap justify-content-center pt-4"></div>
-        <%#= @job.created_at + 60.minutes %>
-        <%#= newtime =  @job.created_at + 105.minutes %>
-        <div class="timer" data-time='<%#= newtime.strftime("%b %d, %Y %H:%M:%S"); %>'></div>
+        <% @job.created_at + 60.minutes %>
+        <% newtime =  @job.created_at + 105.minutes %>
+        <div class="timer" data-time='<%= newtime.strftime("%b %d, %Y %H:%M:%S"); %>'></div>
       </div>
     </div>
   </div>
