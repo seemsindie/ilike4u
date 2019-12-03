@@ -28,6 +28,14 @@ class Bot
       sleep(3)
     end
     sleep(3)
+    puts "----Get the post----"
+
+    browser.goto "https://www.instagram.com/#{job.instagram_username}"
+    # goes our post the picture
+    browser.div(class: ['_9AhH0']).click
+    Job.last.image_url = browser.url
+    Job.save
+
     2.times do
       puts "--------- #{Time.now} Starting loop----------"
       sleep(5)

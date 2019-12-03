@@ -1,2 +1,0 @@
-iusername = " "
-ipassword = ""
