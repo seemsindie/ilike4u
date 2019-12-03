@@ -51,3 +51,32 @@ fifth_like = GivenLike.new(
 )
 fifth_like.save!
 
+six_like = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5nOgFRhOGw/",
+  job_id: techno.id
+)
+six_like.save!
+
+seven_like = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5m_ODFlnS1/",
+  job_id: techno.id
+)
+seven_like.save!
+
+eight_like = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5m1Fdtg81d/",
+  job_id: techno.id
+)
+eight_like.save!
+
+nine_like = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5muSsWowAj/",
+  job_id: techno.id
+)
+nine_like.save!
+
+ten_like = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5nJFd2gFc6/",
+  job_id: techno.id
+)
+ten_like.save!
