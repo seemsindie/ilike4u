@@ -1,10 +1,12 @@
 class JobsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @jobs = Job.all
   end
 
   def new
-    @user = User.find(params[:user_id])
+    @user = current_user
     @job = Job.new
   end
 
@@ -17,7 +19,7 @@ class JobsController < ApplicationController
 
     Bot.insta_bot(@job)
 
-    redirect_to user_jobs_path(@user)
+    redirect_to user_job_path(@user, @job.id)
   end
 
   def show
