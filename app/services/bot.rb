@@ -14,20 +14,20 @@ class Bot
     # Open Browser, Navigate to Login page
     browser = Watir::Browser.new(:chrome, options: { headless: ['--incognito'], args: ['no-sandbox'] })
     # , binary: ENV['GOOGLE_CHROME_PATH']
-    sleep(3)
+    #sleep(3)
     browser.goto "instagram.com/accounts/login/"
-    sleep(5)
+    sleep(1)
     puts "Logging in..."
     browser.text_field(name: "username").set "#{job.instagram_username}"
     browser.text_field(name: "password").set "#{job.instagram_password}"
-    sleep(3)
+    sleep(1)
     browser.button(class: ['sqdOP', 'L3NKy', 'y3zKF']).click
-    sleep(3)
+    sleep(1)
     if browser.button(class: ['aOOlW', 'HoLwm']).exists?
       browser.button(class: ['aOOlW', 'HoLwm']).click
-      sleep(3)
+      #sleep(3)
     end
-    sleep(3)
+    #sleep(3)
     puts "----Get the post----"
 
     browser.goto "https://www.instagram.com/#{job.instagram_username}"
@@ -38,13 +38,13 @@ class Bot
 
     2.times do
       puts "--------- #{Time.now} Starting loop----------"
-      sleep(5)
+      #sleep(1)
       # goes on the hashtag
       browser.goto "https://www.instagram.com/explore/tags/#{job.hashtag}"
-      sleep(3.03)
+      sleep(1)
       # goes on the picture
       browser.divs(class: ['_9AhH0'])[9].click
-      sleep(5)
+      sleep(1)
 
       # given_likes.ig_media_id = browser.url
       # sleep(1)
@@ -58,13 +58,13 @@ class Bot
         browser.span(class: ['fr66n']).click
         GivenLike.create(ig_media_id: browser.url, job_id: job.id)
         puts like_counter += 1
-        sleep(5)
+        sleep(1)
       end
       # close the page
       browser.button(class: ['ckWGn']).click
-      sleep(5)
+      sleep()
       puts "--------- #{Time.now} Closing loop----------"
-      sleep(30)
+      sleep(23)
     end
   end
 end
