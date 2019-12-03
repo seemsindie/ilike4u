@@ -4,7 +4,9 @@
     <% @jobs.each do |job| %>
       <div class="col mt-4">
         <div class="card" style="width: 18rem;">
-          <img src="<%=job.image_url + "media/?size=m" %>" alt="Your latest Post" class="card-img-top">
+          <% if job.image_url != nil %>
+            <img src="<%=job.image_url + "media/?size=m" %>" alt="Your latest Post" class="card-img-top">
+          <% end %>
           <div class="card-body">
             <h5 class="card-title">Under the #<%= job.hashtag %></h5>
             <p class="card-text">We gave <%= job.given_likes.count%> likes</p>
