@@ -1,39 +1,22 @@
-<div class="hero-image mt-5">
-  <div class="hero-text">
+<h1> BOT past liking history </h1>
 
-    <h1 class="pt-5">JOBS index.html.erb</h1>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Image url| </th>
-          <th>Caption| </th>
-          <th>Hashtag| </th>
-          <th>User| </th>
-          <th>User ig media| </th>
-          <th>Likes received| </th>
-          <th>Launched at| </th>
-          <th>Stopped at| </th>
+    <table >
+      <thead >
+        <tr style="font-size:1.2rem">
+          <h2><th>For this post </th></h2>
+          <th>We gave </th>
+          <th>Under the # </th>
 
         </tr>
       </thead>
 
-
-
       <tbody>
             <% @jobs.each do |job| %>
-              <tr>
-                <td><%= job.image_url %></td>
+              <tr style="font-size:1.2rem">
+                <td> <img src="<%=job.image_url + "media/?size=m" %>" alt="Your latest Post" class="img-thumbnail"> </td>
+                <td><%= job.given_likes.count%> likes </td>
                 <td><%= job.hashtag %></td>
-                <td><%= job.user_id %></td>
-                <td><%= job.user_ig_media_id %></td>
-                <td><%= job.likes_received %></td>
-                <td><%= job.launched_at %></td>
-                <td><%= job.stopped_at %></td>
-
                 <td><%= link_to 'Show Info',  user_job_path(params[:user_id], job.id) %></td>
-                <td><%= link_to 'Edit Info',   edit_user_job_path(params[:user_id], job.id) %></td>
-
               </tr>
             <% end %>
 
@@ -45,3 +28,17 @@
 </div>
 
 
+<!--           <th>Caption| </th>
+          <th>User| </th>
+          <th>User ig media| </th>
+          <th>Likes received| </th>
+          <th>Launched at| </th>
+          <th>Stopped at| </th>
+
+
+          <td><%#= job.user_id %></td>
+          <td><%#= job.user_ig_media_id %></td>
+          <td><%#= job.likes_received %></td>
+          <td><%#= job.launched_at %></td>
+          <td><%#= job.stopped_at %></td>
+          <td><%#= link_to 'Edit Info',   edit_user_job_path(params[:user_id], job.id) %></td> -->
