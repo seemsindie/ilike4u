@@ -33,8 +33,8 @@ class Bot
     browser.goto "https://www.instagram.com/#{job.instagram_username}"
     # goes our post the picture
     browser.div(class: ['_9AhH0']).click
-    Job.last.image_url = browser.url
-    Job.save
+    job.image_url = browser.url
+    job.save
 
     2.times do
       puts "--------- #{Time.now} Starting loop----------"
