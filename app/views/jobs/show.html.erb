@@ -25,7 +25,7 @@
   <!--  Displaying the likes given by the bot for this post -->
   <h2>So far</h2>
   <h2>The bot liked the following posts</h2>
-  <div class="user-tabs">
+  <div class="user-tabs cards">
     <a class="tab active" href="">
       <% @job.given_likes.each do |given_like| %>
       <a href="<%= given_like.ig_media_id %>" target="_blank" >
