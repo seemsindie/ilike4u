@@ -20,9 +20,9 @@ class Bot
     puts "Logging in..."
     browser.text_field(name: "username").set "#{job.instagram_username}"
     browser.text_field(name: "password").set "#{job.instagram_password}"
-    sleep(0.5)
+    sleep(1)
     browser.button(class: ['sqdOP', 'L3NKy', 'y3zKF']).click
-    sleep(2)
+    sleep(1.5)
     if browser.button(class: ['aOOlW', 'HoLwm']).exists?
       sleep(3)
       browser.button(class: ['aOOlW', 'HoLwm']).click
@@ -64,7 +64,7 @@ class Bot
       # close the page
       browser.button(class: ['ckWGn']).click
       puts "--------- #{Time.now} Closing loop----------"
-      sleep(5)
+      sleep(1)
     end
   end
 end
