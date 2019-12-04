@@ -19,13 +19,13 @@
       <tbody>
         <tr>
           <th scope="row">TOTAL</th>
-          <td>160</td>
-          <td>10</td>
+          <td><%= @job.likes_received %></td>
+          <td><%= rand(10..20)%></td>
         </tr>
         <tr>
-          <th scope="row">BOT RESULTS</th>
-          <td>50</td>
-          <td>3</td>
+          <th scope="row">THANKS TO BOT</th>
+          <td><%= rand(10..50)%></td>
+          <td><%= rand(0..10)%></td>
         </tr>
       </tbody>
     </table>
