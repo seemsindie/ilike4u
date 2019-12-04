@@ -11,15 +11,15 @@ class JobsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @job = Job.new(job_params)
-    @job.user = @user
+    # @user = User.find(params[:user_id])
+    # @job = Job.new(job_params)
+    # @job.user = @user
 
-    @job.save
+    # @job.save
 
-    Bot.insta_bot(@job)
+    # Bot.insta_bot(@job)
 
-    redirect_to user_job_path(@user, @job.id)
+    redirect_to user_jobs_path(current_user)
   end
 
   def show
