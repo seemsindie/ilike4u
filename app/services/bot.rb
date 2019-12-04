@@ -14,7 +14,7 @@ class Bot
     # Open Browser, Navigate to Login page
     browser = Watir::Browser.new(:chrome, options: { headless: ['--incognito'], args: ['no-sandbox'] })
     # , binary: ENV['GOOGLE_CHROME_PATH']
-    #sleep(3)
+    # sleep(3)
     browser.goto "instagram.com/accounts/login/"
     sleep(1)
     puts "Logging in..."
@@ -37,33 +37,31 @@ class Bot
     job.image_url = browser.url
     job.save
 
-    2.times do
-      puts "--------- #{Time.now} Starting loop----------"
-      #sleep(1)
-      # goes on the hashtag
-      browser.goto "https://www.instagram.com/explore/tags/#{job.hashtag}"
-      sleep(1)
-      # goes on the picture
-      browser.divs(class: ['_9AhH0'])[9].click
-      sleep(1)
+    puts "--------- #{Time.now} Starting liking----------"
+    # sleep(1)
+    # goes on the hashtag
+    browser.goto "https://www.instagram.com/explore/tags/#{job.hashtag}"
+    sleep(1)
+    # goes on the picture
+    browser.divs(class: ['_9AhH0'])[9].click
+    sleep(1)
 
-      # given_likes.ig_media_id = browser.url
-      # sleep(1)
-      # user_liked << browser.h2(class: ['_6lAjh']).text
-      # sleep(3.09)
-      # user_hashtags << browser.div(class: ['C4VMK']).span.text.match(/#.+/).to_s.split(" ")
+    # given_likes.ig_media_id = browser.url
+    # sleep(1)
+    # user_liked << browser.h2(class: ['_6lAjh']).text
+    # sleep(3.09)
+    # user_hashtags << browser.div(class: ['C4VMK']).span.text.match(/#.+/).to_s.split(" ")
 
-      # checked if liked
-      if browser.span(class: ['glyphsSpriteHeart__outline__24__grey_9', 'u-__7']).exists?
-        # likes
-        browser.span(class: ['fr66n']).click
-        GivenLike.create(ig_media_id: browser.url, job_id: job.id)
-        puts like_counter += 1
-        sleep(1)
-      end
-      # close the page
-      browser.button(class: ['ckWGn']).click
-      puts "--------- #{Time.now} Closing loop----------"
+    # checked if liked
+    if browser.span(class: ['glyphsSpriteHeart__outline__24__grey_9', 'u-__7']).exists?
+      # likes
+      browser.span(class: ['fr66n']).click
+      GivenLike.create(ig_media_id: browser.url, job_id: job.id)
+      puts like_counter += 1
+      sleep(1)
     end
+    # close the page
+    browser.button(class: ['ckWGn']).click
+    puts "--------- #{Time.now} Stop Liking----------"
   end
 end
