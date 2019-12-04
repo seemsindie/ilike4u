@@ -2,21 +2,18 @@
   <h1 class="mb-5"> BOT past liking history </h1>
   <div class="row">
     <% @jobs.each do |job| %>
-      <div class="col mt-4">
+      <div class="col-4 mt-4">
         <div class="card" style="width: 18rem;">
           <% if job.image_url != nil %>
             <img src="<%=job.image_url + "media/?size=m" %>" alt="Your latest Post" class="card-img-top">
           <% end %>
           <div class="card-body">
             <h5 class="card-title">Under the #<%= job.hashtag %></h5>
-            <p class="card-text">We gave <%= job.given_likes.count%> likes</p>
+            <p class="card-text">We gave <%= job.given_likes.count%><i style="color:red;" class="fas fa-heart"></i></p>
             <%= link_to 'Show Info',  user_job_path(params[:user_id], job.id), class:"btn btn-primary" %>
           </div>
         </div>
       </div>
     <% end %>
-  </div>
-  <div class="mt-5">
-    <p><%= link_to 'Create Job',  new_user_job_path %></p>
   </div>
 </div>
