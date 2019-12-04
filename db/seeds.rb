@@ -124,65 +124,65 @@ puts 'Creating Given Likes...'
 
 
 
-first_like = GivenLike.new(
+a1 = GivenLike.new(
   ig_media_id: "https://www.instagram.com/p/B5kC5hdh_L_/",
   job_id: techno.id
 )
-first_like.save!
+a1.save!
 
-second_like = GivenLike.new(
+a2 = GivenLike.new(
   ig_media_id: "https://www.instagram.com/p/B5jpzy3jhmV/",
   job_id: techno.id
 )
-second_like.save!
+a2.save!
 
-third_like = GivenLike.new(
+a3 = GivenLike.new(
   ig_media_id: "https://www.instagram.com/p/B5m4d02H5qW/",
   job_id: techno.id
 )
-third_like.save!
+a3.save!
 
-fourth_like = GivenLike.new(
+a4 = GivenLike.new(
   ig_media_id: "https://www.instagram.com/p/B5myy60HqpR/",
   job_id: techno.id
 )
-fourth_like.save!
+a4.save!
 
-fifth_like = GivenLike.new(
+a5 = GivenLike.new(
   ig_media_id: "https://www.instagram.com/p/B5mZCmziUg8/",
   job_id: techno.id
 )
-fifth_like.save!
+a5.save!
 
-six_like = GivenLike.new(
+a6 = GivenLike.new(
   ig_media_id: "https://www.instagram.com/p/B5nOgFRhOGw/",
   job_id: techno.id
 )
-six_like.save!
+a6.save!
 
-seven_like = GivenLike.new(
+a7 = GivenLike.new(
   ig_media_id: "https://www.instagram.com/p/B5m_ODFlnS1/",
   job_id: techno.id
 )
-seven_like.save!
+a7.save!
 
-eight_like = GivenLike.new(
+a8 = GivenLike.new(
   ig_media_id: "https://www.instagram.com/p/B5m1Fdtg81d/",
   job_id: techno.id
 )
-eight_like.save!
+a8.save!
 
-nine_like = GivenLike.new(
+a9 = GivenLike.new(
   ig_media_id: "https://www.instagram.com/p/B5muSsWowAj/",
   job_id: techno.id
 )
-nine_like.save!
+a9.save!
 
-ten_like = GivenLike.new(
+a10 = GivenLike.new(
   ig_media_id: "https://www.instagram.com/p/B5nJFd2gFc6/",
   job_id: techno.id
 )
-ten_like.save!
+a10.save!
 
 a11 = GivenLike.new(
   ig_media_id: "https://www.instagram.com/p/B5o-CruhgeQ/",
@@ -445,240 +445,6 @@ a54.save!
 
 
 
-b18 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-Bn6JrD-/",
-  job_id: techno1.id
-)
-b18.save!
-
-b19 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o99cfq5Gz/",
-  job_id: techno1.id
-)
-b19.save!
-
-b20 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-GVFhfO1/",
-  job_id: techno1.id
-)
-b20.save!
-
-b21 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-GkfHUml/",
-  job_id: techno1.id
-)
-b21.save!
-
-b22 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-Gj1o1Zf/",
-  job_id: techno1.id
-)
-b22.save!
-
-b23 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-IHODZx-/",
-  job_id: techno1.id
-)
-b23.save!
-
-b24 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-IMvH8aS/",
-  job_id: techno1.id
-)
-b24.save!
-
-b25 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-IPXpUDn/",
-  job_id: techno1.id
-)
-b25.save!
-
-b26 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-IUaHNj3/",
-  job_id: techno1.id
-)
-b26.save!
-
-b27 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-IexFXZZ/",
-  job_id: techno1.id
-)
-b27.save!
-
-b28 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-IZGlgu1/",
-  job_id: techno1.id
-)
-b28.save!
-
-b29 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-KCshKQR/",
-  job_id: techno1.id
-)
-b29.save!
-
-b30 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o943NlhcI/",
-  job_id: techno1.id
-)
-b30.save!
-
-b31 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-K4il8S9/",
-  job_id: techno1.id
-)
-b31.save!
-
-b32 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-LGFn0GN/",
-  job_id: techno1.id
-)
-b32.save!
-
-b33 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-LmbnnvW/",
-  job_id: techno1.id
-)
-b33.save!
-
-b34 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-L0iIWqe/",
-  job_id: techno1.id
-)
-b34.save!
-
-b35 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-MNMAOgB/",
-  job_id: techno1.id
-)
-b35.save!
-
-b36 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5nOgFRhOGw/",
-  job_id: techno1.id
-)
-b36.save!
-
-b37 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-MpbnAU8/",
-  job_id: techno1.id
-)
-b37.save!
-
-b38 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-Momg2Tg/",
-  job_id: techno1.id
-)
-b38.save!
-
-b39 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5muSsWowAj/",
-  job_id: techno1.id
-)
-b39.save!
-
-b1 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5kC5hdh_L_/",
-  job_id: techno1.id
-)
-b1.save!
-
-b2 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5jpzy3jhmV/",
-  job_id: techno1.id
-)
-b2.save!
-
-b3 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5m4d02H5qW/",
-  job_id: techno1.id
-)
-b3.save!
-
-b4 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5myy60HqpR/",
-  job_id: techno1.id
-)
-b4.save!
-
-b5 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5mZCmziUg8/",
-  job_id: techno1.id
-)
-b5.save!
-
-b6 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5nOgFRhOGw/",
-  job_id: techno1.id
-)
-b6.save!
-
-b7 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5m_ODFlnS1/",
-  job_id: techno1.id
-)
-b7.save!
-
-b8 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5m1Fdtg81d/",
-  job_id: techno1.id
-)
-b8.save!
-
-b9 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5muSsWowAj/",
-  job_id: techno1.id
-)
-b9.save!
-
-b10 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5nJFd2gFc6/",
-  job_id: techno1.id
-)
-b10.save!
-
-b11 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-CruhgeQ/",
-  job_id: techno1.id
-)
-b11.save!
-
-b12 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-C-upvUR/",
-  job_id: techno1.id
-)
-b12.save!
-
-b13 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-C9nBNJF/",
-  job_id: techno1.id
-)
-b13.save!
-
-b14 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-DnbgtC2/",
-  job_id: techno1.id
-)
-b14.save!
-
-b15 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o9pwZJfZ3/",
-  job_id: techno1.id
-)
-b15.save!
-
-b16 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-EH9o-Ol/",
-  job_id: techno1.id
-)
-b16.save!
-
-b17 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-EmGAI_l/",
-  job_id: techno1.id
-)
-b17.save!
-
 b40 = GivenLike.new(
   ig_media_id: "https://www.instagram.com/p/B5o-M5rhoC5/",
   job_id: techno1.id
@@ -769,57 +535,291 @@ b55 = GivenLike.new(
 )
 b55.save!
 
+b18 = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5pGYJSgaoU/",
+  job_id: techno1.id
+)
+b18.save!
+
+b19 = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5ovhuIpajf/",
+  job_id: techno1.id
+)
+b19.save!
+
+b20 = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5o6PGXBE-U/",
+  job_id: techno1.id
+)
+b20.save!
+
+b21 = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5ojcaPnNEE/",
+  job_id: techno1.id
+)
+b21.save!
+
+b22 = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5pEbwtluIW/",
+  job_id: techno1.id
+)
+b22.save!
+
+b23 = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5orv74J2LV/",
+  job_id: techno1.id
+)
+b23.save!
+
+b24 = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5ooSNrBu3f/",
+  job_id: techno1.id
+)
+b24.save!
+
+b25 = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5o4M_SBPr4/",
+  job_id: techno1.id
+)
+b25.save!
+
+b26 = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5pGLwrhSMV/",
+  job_id: techno1.id
+)
+b26.save!
+
+b27 = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5pGM2mIk5Z/",
+  job_id: techno1.id
+)
+b27.save!
+
+b28 = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5pGNpAguLL/",
+  job_id: techno1.id
+)
+b28.save!
+
+b29 = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5pGOFUn0vZ/",
+  job_id: techno1.id
+)
+b29.save!
+
+b30 = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5pGOTgKL9l/",
+  job_id: techno1.id
+)
+b30.save!
+
+b31 = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5pGOXinGE4/",
+  job_id: techno1.id
+)
+b31.save!
+
+b32 = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5pGOkLh-8v/",
+  job_id: techno1.id
+)
+b32.save!
+
+b33 = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5pGOy_Jgfx/",
+  job_id: techno1.id
+)
+b33.save!
+
+b34 = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5pGOtDKxkg/",
+  job_id: techno1.id
+)
+b34.save!
+
+b35 = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5pGPSAniv2/",
+  job_id: techno1.id
+)
+b35.save!
+
+b36 = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5pGPZaHLw4/",
+  job_id: techno1.id
+)
+b36.save!
+
+b37 = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5pGPqeod3D/",
+  job_id: techno1.id
+)
+b37.save!
+
+b38 = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5pGPjmAkjb/",
+  job_id: techno1.id
+)
+b38.save!
+
+b39 = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5muSsWowAj/",
+  job_id: techno1.id
+)
+b39.save!
+
+b1 = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5pGQFqAM4n/",
+  job_id: techno1.id
+)
+b1.save!
+
+b2 = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5pGS15FY5L/",
+  job_id: techno1.id
+)
+b2.save!
+
+b3 = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5pGT00JWsK/",
+  job_id: techno1.id
+)
+b3.save!
+
+b4 = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5myy60HqpR/",
+  job_id: techno1.id
+)
+b4.save!
+
+b5 = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5mZCmziUg8/",
+  job_id: techno1.id
+)
+b5.save!
+
+b6 = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5nOgFRhOGw/",
+  job_id: techno1.id
+)
+b6.save!
+
+b7 = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5m_ODFlnS1/",
+  job_id: techno1.id
+)
+b7.save!
+
+b8 = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5m1Fdtg81d/",
+  job_id: techno1.id
+)
+b8.save!
+
+b9 = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5muSsWowAj/",
+  job_id: techno1.id
+)
+b9.save!
+
+b10 = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5nJFd2gFc6/",
+  job_id: techno1.id
+)
+b10.save!
+
+b11 = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5o-CruhgeQ/",
+  job_id: techno1.id
+)
+b11.save!
+
+b12 = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5o-C-upvUR/",
+  job_id: techno1.id
+)
+b12.save!
+
+b13 = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5o-C9nBNJF/",
+  job_id: techno1.id
+)
+b13.save!
+
+b14 = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5o-DnbgtC2/",
+  job_id: techno1.id
+)
+b14.save!
+
+b15 = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5o9pwZJfZ3/",
+  job_id: techno1.id
+)
+b15.save!
+
+b16 = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5o-EH9o-Ol/",
+  job_id: techno1.id
+)
+b16.save!
+
+b17 = GivenLike.new(
+  ig_media_id: "https://www.instagram.com/p/B5o-EmGAI_l/",
+  job_id: techno1.id
+)
+b17.save!
+
 
 c1 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5kC5hdh_L_/",
+  ig_media_id: "https://www.instagram.com/p/B5pIuLVnOKT/",
   job_id: techno2.id
 )
 c1.save!
 
 c2 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5jpzy3jhmV/",
+  ig_media_id: "https://www.instagram.com/p/B5pI3fsow_V/",
   job_id: techno2.id
 )
 c2.save!
 
 c3 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5m4d02H5qW/",
+  ig_media_id: "https://www.instagram.com/p/B5pI3l1HSbb/",
   job_id: techno2.id
 )
 c3.save!
 
 c4 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5myy60HqpR/",
+  ig_media_id: "https://www.instagram.com/p/B5pI3q2AukE/",
   job_id: techno2.id
 )
 c4.save!
 
 c5 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5mZCmziUg8/",
+  ig_media_id: "https://www.instagram.com/p/B5pIzEZpOiK/",
   job_id: techno2.id
 )
 c5.save!
 
 c6 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5nOgFRhOGw/",
+  ig_media_id: "https://www.instagram.com/p/B5pI4Pql2Kl/",
   job_id: techno2.id
 )
 c6.save!
 
 c7 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5m_ODFlnS1/",
+  ig_media_id: "https://www.instagram.com/p/B5pI4Ozp3pg/",
   job_id: techno2.id
 )
 c7.save!
 
 c8 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5m1Fdtg81d/",
+  ig_media_id: "https://www.instagram.com/p/B5pI4jegp1q/",
   job_id: techno2.id
 )
 c8.save!
 
 c9 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5muSsWowAj/",
+  ig_media_id: "https://www.instagram.com/p/B5pI4ngBn4V/",
   job_id: techno2.id
 )
 c9.save!
@@ -831,49 +831,49 @@ c10 = GivenLike.new(
 c10.save!
 
 c11 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-CruhgeQ/",
+  ig_media_id: "https://www.instagram.com/p/B5pI4vTIKI9/",
   job_id: techno2.id
 )
 c11.save!
 
 c12 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-C-upvUR/",
+  ig_media_id: "https://www.instagram.com/p/B5pI5IpK1zM/",
   job_id: techno2.id
 )
 c12.save!
 
 c13 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-C9nBNJF/",
+  ig_media_id: "https://www.instagram.com/p/B5pI5ROgqR_/",
   job_id: techno2.id
 )
 c13.save!
 
 c14 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-DnbgtC2/",
+  ig_media_id: "https://www.instagram.com/p/B5pIr26DhZv/",
   job_id: techno2.id
 )
 c14.save!
 
 c15 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o9pwZJfZ3/",
+  ig_media_id: "https://www.instagram.com/p/B5pI5plgH7w/",
   job_id: techno2.id
 )
 c15.save!
 
 c16 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-EH9o-Ol/",
+  ig_media_id: "https://www.instagram.com/p/B5pI50aF1NU/",
   job_id: techno2.id
 )
 c16.save!
 
 c17 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-EmGAI_l/",
+  ig_media_id: "https://www.instagram.com/p/B5pI6BAA-Fl/",
   job_id: techno2.id
 )
 c17.save!
 
 c18 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-Bn6JrD-/",
+  ig_media_id: "https://www.instagram.com/p/B5pI6DdHsGs/",
   job_id: techno2.id
 )
 c18.save!
@@ -885,205 +885,205 @@ c19 = GivenLike.new(
 c19.save!
 
 c20 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-GVFhfO1/",
+  ig_media_id: "https://www.instagram.com/p/B5pI6DNAqO-/",
   job_id: techno2.id
 )
 c20.save!
 
 c21 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-GkfHUml/",
+  ig_media_id: "https://www.instagram.com/p/B5pI6KCA-Yi/",
   job_id: techno2.id
 )
 c21.save!
 
 c22 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-Gj1o1Zf/",
+  ig_media_id: "https://www.instagram.com/p/B5pI6gnFczg/",
   job_id: techno2.id
 )
 c22.save!
 
 c23 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-IHODZx-/",
+  ig_media_id: "https://www.instagram.com/p/B5pI6kon80q/",
   job_id: techno2.id
 )
 c23.save!
 
 c24 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-IMvH8aS/",
+  ig_media_id: "https://www.instagram.com/p/B5pI6eTg7Da/",
   job_id: techno2.id
 )
 c24.save!
 
 c25 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-IPXpUDn/",
+  ig_media_id: "https://www.instagram.com/p/B5pI6gonM-O/",
   job_id: techno2.id
 )
 c25.save!
 
 c26 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-IUaHNj3/",
+  ig_media_id: "https://www.instagram.com/p/B5pI5KXi0XK/",
   job_id: techno2.id
 )
 c26.save!
 
 c27 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-IexFXZZ/",
+  ig_media_id: "https://www.instagram.com/p/B5pI7FFIPr-/",
   job_id: techno2.id
 )
 c27.save!
 
 c28 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-IZGlgu1/",
+  ig_media_id: "https://www.instagram.com/p/B5pI71aoI-s/",
   job_id: techno2.id
 )
 c28.save!
 
 c29 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-KCshKQR/",
+  ig_media_id: "https://www.instagram.com/p/B5pI8hDhxML/",
   job_id: techno2.id
 )
 c29.save!
 
 c30 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o943NlhcI/",
+  ig_media_id: "https://www.instagram.com/p/B5pI8pXFinr/",
   job_id: techno2.id
 )
 c30.save!
 
 c31 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-K4il8S9/",
+  ig_media_id: "https://www.instagram.com/p/B5pI8-thP_B/",
   job_id: techno2.id
 )
 c31.save!
 
 c32 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-LGFn0GN/",
+  ig_media_id: "https://www.instagram.com/p/B5pI87xJ6rx/",
   job_id: techno2.id
 )
 c32.save!
 
 c33 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-LmbnnvW/",
+  ig_media_id: "https://www.instagram.com/p/B5pIXkFBj9u/",
   job_id: techno2.id
 )
 c33.save!
 
 c34 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-L0iIWqe/",
+  ig_media_id: "https://www.instagram.com/p/B5pI9MdJjOs/",
   job_id: techno2.id
 )
 c34.save!
 
 c35 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-MNMAOgB/",
+  ig_media_id: "https://www.instagram.com/p/B5pIvCGpdJ8/",
   job_id: techno2.id
 )
 c35.save!
 
 c36 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5nOgFRhOGw/",
+  ig_media_id: "https://www.instagram.com/p/B5pIzQTFKsT/",
   job_id: techno2.id
 )
 c36.save!
 
 c37 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-MpbnAU8/",
+  ig_media_id: "https://www.instagram.com/p/B5pI9YaCw5L/",
   job_id: techno2.id
 )
 c37.save!
 
 c38 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-Momg2Tg/",
+  ig_media_id: "https://www.instagram.com/p/B5pI7c1j8-I/",
   job_id: techno2.id
 )
 c38.save!
 
 c39 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5muSsWowAj/",
+  ig_media_id: "https://www.instagram.com/p/B5pI92DFenJ/",
   job_id: techno2.id
 )
 c39.save!
 
 c40 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-M5rhoC5/",
+  ig_media_id: "https://www.instagram.com/p/B5pI-EnB_7-/",
   job_id: techno2.id
 )
 c40.save!
 
 c41 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-NKWHMIQ/",
+  ig_media_id: "https://www.instagram.com/p/B5pI-f2l0tM/",
   job_id: techno2.id
 )
 c41.save!
 
 c42 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-PTtHfHy/",
+  ig_media_id: "https://www.instagram.com/p/B5pI_CEAwnX/",
   job_id: techno2.id
 )
 c42.save!
 
 c43 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-RpUHua6/",
+  ig_media_id: "https://www.instagram.com/p/B5ovhuIpajf/",
   job_id: techno2.id
 )
 c43.save!
 
 c45 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-NCxANf7/",
+  ig_media_id: "https://www.instagram.com/p/B5o6PGXBE-U/",
   job_id: techno2.id
 )
 c45.save!
 
 c46 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-TUoBhRB/",
+  ig_media_id: "https://www.instagram.com/p/B5ojcaPnNEE/",
   job_id: techno2.id
 )
 c46.save!
 
 c47 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5kC5hdh_L_/",
+  ig_media_id: "https://www.instagram.com/p/B5pJ0qpKbR4/",
   job_id: techno2.id
 )
 c47.save!
 
 c48 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-TjOqPUn/",
+  ig_media_id: "https://www.instagram.com/p/B5pEbwtluIW/",
   job_id: techno2.id
 )
 c48.save!
 
 c49 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-UBMhpWL/",
+  ig_media_id: "https://www.instagram.com/p/B5orv74J2LV/",
   job_id: techno2.id
 )
 c49.save!
 
 c50 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-UMVFBsI/",
+  ig_media_id: "https://www.instagram.com/p/B5ooSNrBu3f/",
   job_id: techno2.id
 )
 c50.save!
 
 c51 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5mZCmziUg8/",
+  ig_media_id: "https://www.instagram.com/p/B5o4M_SBPr4/",
   job_id: techno2.id
 )
 c51.save!
 
 c52 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-PaAIbAD/",
+  ig_media_id: "https://www.instagram.com/p/B5ogd7bhjJ2/",
   job_id: techno2.id
 )
 c52.save!
 
 c53 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-UoPlDRF/",
+  ig_media_id: "https://www.instagram.com/p/B5oMK_CFWZ0/",
   job_id: techno2.id
 )
 c53.save!
 
 c54 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-VE_HsFo/",
+  ig_media_id: "https://www.instagram.com/p/B5pJ1XVlapY/",
   job_id: techno2.id
 )
 c54.save!
