@@ -1,3 +1,4 @@
+
   <!--  Displaying the likes given by the bot for this post -->
 <div  id='likes-given'>
     <h2><i style="color:red;" class="fas fa-heart"></i><span>Likes given to the following posts</span><i style="color:red;" class="fas fa-heart"></i></h2>
@@ -12,4 +13,59 @@
     </div>
   </div>
 </div>
+
+<div id= "#post">
+  <div class="card">
+    <div class="card-header">
+      <img src="https://scontent-frx5-1.cdninstagram.com/vp/5bed0121e88155f1f3ad4cb2c649cffc/5E67CAC1/t51.2885-19/s150x150/18096529_1328738613870773_7370561022676959232_a.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com" alt="avatartest" class="avatartest">
+      <h2>Post highlighted by the BOT</h2>
+    </div>
+    <div class="card-body">
+      <% if @job.image_url != nil %>
+        <img src="<%= @job.image_url + "media/?size=m" %>" alt="Your latest Post" class="img-thumbnail">
+      <% end %>
+      <p class="card-text"> <%= @job.caption %></p>
+    </div>
+</div>  
+
+
+
+
+
+
+<div id='#results'>
+  <div class="container margin-top-50 col-lg-5 col-xl-5 mx-auto">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col"> </th>
+          <th scope="col">LIKES RECEIVED</th>
+          <th scope="col">FOLLOWERS GAINED </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">TOTAL</th>
+          <td><%= @job.likes_received %></td>
+          <td><%= rand(10..20)%></td>
+        </tr>
+        <tr>
+          <th scope="row">THANKS TO BOT</th>
+          <td><%= rand(10..50)%></td>
+          <td><%= rand(0..10)%></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="container margin-top-50 col-lg-5 col-xl-5 mx-auto">
+    <h1>POST PERFORMANCE OVERVIEW</h1>
+    <p> For this post you received <b><%= @job.likes_received %> likes </b> and gained <b><%= rand(10..20)%> followers </b> on your account </p>
+    <p> OUT OF THOSE </p>
+    <p> <b><%= rand(10..50)%> likes </b> and <b><%= rand(10..50)%> followers</b> were gained thanks to the bot</p>
+
+  </div>
+  </div>
+
+
 
