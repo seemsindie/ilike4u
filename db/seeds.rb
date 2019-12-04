@@ -417,6 +417,13 @@ a48 = GivenLike.new(
 )
 a48.save!
 
+
+
+
+
+
+
+
 a49 = GivenLike.new(
   ig_media_id: "https://www.instagram.com/p/B5o-UBMhpWL/",
   job_id: techno.id
@@ -452,6 +459,14 @@ a54 = GivenLike.new(
   job_id: techno.id
 )
 a54.save!
+
+
+
+
+
+
+
+
 
 
 

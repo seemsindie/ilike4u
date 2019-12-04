@@ -12,7 +12,7 @@
                 </div>
                 <% if job.image_url != nil %>
                   <img src="<%=job.image_url + "media/?size=m" %>" alt="Your latest Post" class="card-img-top">
-                  <%= link_to 'Show Info',  user_job_path(params[:user_id], job.id) %>
+                  <%= link_to 'job info',  user_job_path(params[:user_id], job.id) %>
                 <% end %>
               </div>
             </div>
