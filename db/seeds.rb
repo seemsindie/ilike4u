@@ -37,7 +37,6 @@ techno2 = Job.new(
   hashtag: "dogsofinstagram",
   user_id: petpawer.id,
   likes_received: 131,
-  likes_gained:
   launched_at: Time.now,
   stopped_at: Time.now + 125
 )
