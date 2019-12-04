@@ -1,5 +1,6 @@
 <div class="container">
   <h1>Let's start liking</h1>
+  <br>
   <%= simple_form_for [@user, @job] do |f| %>
   <!--   <%= f.input :image_url %>
     <%= f.input :caption %>
@@ -13,6 +14,7 @@
           <%= f.input :hashtag %>
           <%= f.input :instagram_username %>
           <%= f.input :instagram_password %>
-    <%= f.submit "Launch Bot", class: 'btn btn-primary' %>
+    <br>
+    <%= f.submit "Start Job", class: 'btn btn-primary btn-lg btn-block' %>
   <% end %>
 </div>

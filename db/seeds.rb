@@ -16,7 +16,7 @@ techno9 = Job.new(
   hashtag: "pets",
   user_id: petpawer.id,
   likes_received: 123,
-  launched_at: Time.now,
+  launched_at: Time.now - 86400,
   stopped_at: Time.now + 125
 )
 techno9.save!
@@ -133,8 +133,6 @@ techno10.save!
 
 
 puts 'Creating Given Likes...'
-
-
 
 a1 = GivenLike.new(
   ig_media_id: "https://www.instagram.com/p/B5kC5hdh_L_/",
@@ -3244,7 +3242,7 @@ j37 = GivenLike.new(
 j37.save!
 
 j38 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-Momg2Tg/",
+  ig_media_id: "https://www.instagram.com/p/B5qLSe0pwn0/",
   job_id: techno9.id
 )
 j38.save!
