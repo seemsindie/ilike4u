@@ -43,6 +43,6 @@ class JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:caption, :hashtag, :user_id, :likes_received, :launched_at, :instagram_username, :instagram_password)
+    params.require(:job).permit(:caption, :hashtag, :user_id, :likes_received, :launched_at, :instagram_username, :instagram_password, :followers_gained)
   end
 end

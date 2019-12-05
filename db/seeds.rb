@@ -19,7 +19,8 @@ techno9 = Job.new(
   user_id: petpawer.id,
   likes_received: 123,
   launched_at: DateTime.new(2019,11,01,9,25,30),
-  stopped_at: DateTime.new(2019,11,01,9,27,30)
+  stopped_at: DateTime.new(2019,11,01,9,27,30),
+  followers_gained: rand(1..20)
 )
 techno9.save!
 
@@ -30,7 +31,8 @@ techno8 = Job.new(
   user_id: petpawer.id,
   likes_received: 144,
   launched_at: Time.now,
-  stopped_at: Time.now + 125
+  stopped_at: Time.now + 125,
+  followers_gained: rand(1..20)
 )
 techno8.save!
 
@@ -41,7 +43,8 @@ techno7 = Job.new(
   user_id: petpawer.id,
   likes_received: 110,
   launched_at: Time.now,
-  stopped_at: Time.now + 125
+  stopped_at: Time.now + 125,
+  followers_gained: rand(1..20)
 )
 techno7.save!
 
@@ -52,7 +55,8 @@ techno6 = Job.new(
   user_id: petpawer.id,
   likes_received: 125,
   launched_at: Time.now,
-  stopped_at: Time.now + 125
+  stopped_at: Time.now + 125,
+  followers_gained: rand(1..20)
 )
 techno6.save!
 
@@ -63,7 +67,8 @@ techno5 = Job.new(
   user_id: petpawer.id,
   likes_received: 133,
   launched_at: Time.now,
-  stopped_at: Time.now + 125
+  stopped_at: Time.now + 125,
+  followers_gained: rand(1..20)
 )
 techno5.save!
 
@@ -74,7 +79,8 @@ techno4 = Job.new(
   user_id: petpawer.id,
   likes_received: 161,
   launched_at: Time.now,
-  stopped_at: Time.now + 125
+  stopped_at: Time.now + 125,
+  followers_gained: rand(1..20)
 )
 techno4.save!
 
@@ -85,7 +91,8 @@ techno3 = Job.new(
   user_id: petpawer.id,
   likes_received: 145,
   launched_at: Time.now,
-  stopped_at: Time.now + 125
+  stopped_at: Time.now + 125,
+  followers_gained: rand(1..20)
 )
 techno3.save!
 
@@ -96,7 +103,8 @@ techno2 = Job.new(
   user_id: petpawer.id,
   likes_received: 131,
   launched_at: Time.now,
-  stopped_at: Time.now + 125
+  stopped_at: Time.now + 125,
+  followers_gained: rand(1..20)
 )
 techno2.save!
 
@@ -107,7 +115,8 @@ techno1 = Job.new(
   user_id: petpawer.id,
   likes_received: 139,
   launched_at: Time.now,
-  stopped_at: Time.now + 125
+  stopped_at: Time.now + 125,
+  followers_gained: rand(1..20)
 )
 techno1.save!
 
@@ -118,7 +127,8 @@ techno = Job.new(
   user_id: petpawer.id,
   likes_received: 161,
   launched_at: Time.now,
-  stopped_at: Time.now + 125
+  stopped_at: Time.now + 125,
+  followers_gained: rand(1..20)
 )
 techno.save!
 
@@ -129,7 +139,8 @@ techno10 = Job.new(
   user_id: petpawer.id,
   likes_received: 2,
   launched_at: Time.now,
-  stopped_at: Time.now + 125
+  stopped_at: Time.now + 125,
+  followers_gained: 0
 )
 techno10.save!
 
