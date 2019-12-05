@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => {:registrations => "registrations"}
   root to: 'jobs#new'
+
   resources :users, except: :delete do
+
     resources :jobs, except: :delete do
+      get 'run'
      resources :given_likes, :delete
     end
   end
