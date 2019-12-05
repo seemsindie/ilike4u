@@ -1,14 +1,12 @@
 <div class="container">
   <h1 class="mb-5"> Your BOOSTED POSTS </h1>
-
-  <div class="row">
-    <div class="card-body">
+  <div class="card-body">
+    <div class="row">
       <% @jobs.each do |job| %>
-      <div class="col-4 mt-4">
-        <div class="card" style="width: 18rem;">
+      <div class="col-6 col-sm-4 col-md-3" style="margin-bottom: 15px">
+        <div class="card">
           <div class="card-body">
             <h5 class="card-title"><%= job.launched_at.strftime("%d %B %Y") %></h5>
-            <!--  <%= job.given_likes.count%> -->
           </div>
           <%= link_to  user_job_path(params[:user_id], job.id) do %>
           <% if job.image_url != nil %>
@@ -25,4 +23,5 @@
       <% end %>
     </div>
   </div>
+</div>
 
