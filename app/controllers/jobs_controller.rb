@@ -24,6 +24,7 @@ class JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
+    @jobtime = ((@job.stopped_at - @job.launched_at) / 60).round
   end
 
   def edit
