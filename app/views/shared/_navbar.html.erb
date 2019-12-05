@@ -10,10 +10,10 @@
       <ul class="navbar-nav mr-auto">
         <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "Start Bot", new_user_job_path(current_user), class: "nav-link" %>
+          <%= link_to "Start Job", new_user_job_path(current_user), class: "nav-link" %>
         </li>
         <li class="nav-item active">
-          <%= link_to "Bot History", user_jobs_path(current_user), class: "nav-link" %>
+          <%= link_to "Boosted posts", user_jobs_path(current_user), class: "nav-link" %>
         </li>
 
         <li class="nav-item dropdown">

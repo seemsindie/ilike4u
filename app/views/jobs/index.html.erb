@@ -1,19 +1,28 @@
 <div class="container">
-  <h1 class="mb-5"> BOT past liking history </h1>
+  <h1 class="mb-5"> Your BOOSTED POSTS </h1>
+
   <div class="row">
-    <% @jobs.each do |job| %>
-      <div class="col-4 mt-4">
-        <div class="card" style="width: 18rem;">
-          <% if job.image_url != nil %>
-            <img src="<%=job.image_url + "media/?size=m" %>" alt="Your latest Post" class="card-img-top">
+
+        <div class="card-body">
+          <% @jobs.each do |job| %>
+            <div class="col-4 mt-4">
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title"><%= job.launched_at %></h5>
+                  <!--  <%= job.given_likes.count%> -->
+                </div>
+                <% if job.image_url != nil %>
+                  <img src="<%=job.image_url + "media/?size=m" %>" alt="Your latest Post" class="card-img-top">
+                  <%= link_to 'job info',  user_job_path(params[:user_id], job.id) %>
+                <% end %>
+                <div>
+                <h2><i style="color:black;" class="fas fa-hashtag"> </i> <%= job.hashtag %> </h2>
+                <p> <b><%= job.given_likes.count%> <i style="color:black;" class="fas fa-heart"></i> given </b> </p>
+                <p> <b><%= job.likes_received %> <i style="color:red;" class="fas fa-heart"></i> received </b> </p>
+              </div>
+              </div>
+            </div>
           <% end %>
-          <div class="card-body">
-            <h5 class="card-title">Under the #<%= job.hashtag %></h5>
-            <p class="card-text">We gave <%= job.given_likes.count%><i style="color:red;" class="fas fa-heart"></i></p>
-            <%= link_to 'Show Info',  user_job_path(params[:user_id], job.id), class:"btn btn-primary" %>
-          </div>
         </div>
-      </div>
-    <% end %>
-  </div>
 </div>
+

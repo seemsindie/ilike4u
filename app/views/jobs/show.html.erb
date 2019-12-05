@@ -1,7 +1,6 @@
 
   <!--  Displaying the likes given by the bot for this post -->
 <div class="container">
-
   <table class="table align-text-middle">
     <tbody>
       <tr>
@@ -10,24 +9,23 @@
             <div class="card">
               <div class="card-header">
                 <img src="https://scontent-frx5-1.cdninstagram.com/vp/5bed0121e88155f1f3ad4cb2c649cffc/5E67CAC1/t51.2885-19/s150x150/18096529_1328738613870773_7370561022676959232_a.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com" alt="avatartest" class="avatartest">
-                <h2 class="margins">Post highlighted by the BOT</h2>
+                <h4 class="margins">Boosted post</h4>
               </div>
               <div class="card-body">
                 <% if @job.image_url != nil %>
-                  <img src="<%= @job.image_url + "media/?size=m" %>" alt="Your latest Post" class="img-thumbnail">
-                <% end %>
-                <p class="card-text"> <%= @job.caption %></p>
               </div>
+                <img src="<%= @job.image_url + "media/?size=m" %>" alt="Your latest Post" class="img-thumbnail">
+                <% end %>
+                <p class="card-text"> <%#= @job.caption %></p>
+                <!--<h3>Job launched </h3>  -->
+                <p><%= @job.created_at %></p>
+                <h2><i style="color:black;" class="fas fa-hashtag"> </i> <%= @job.hashtag %></h2>
+                <p> <b><%= @job.given_likes.count%> <i style="color:black;" class="fas fa-heart"></i> given </b> </p>
+                <p> <b><%= @job.likes_received %> <i style="color:red;" class="fas fa-heart"></i> received </b> </p>
+                <p> <b><%= rand(0..20)%>  <i style="color:green;" class="fas fa-user-plus"></i> gained </b> </p>
+            </div>
           </div>
         </th>
-        <td>
-          <div class="" id='#results'>
-            <h1>POST PERFORMANCE OVERVIEW</h1>
-            <p> For this post you received <b><%= @job.likes_received %> likes </b> and gained <b><%= rand(10..20)%> followers </b> on your account </p>
-            <p> OUT OF THOSE </p>
-            <p> <b><%= rand(10..50)%> likes </b> and <b><%= rand(10..50)%> followers </b> were gained thanks to the bot</p>
-          </div>
-        </td>
       </tr>
     </tbody>
   </table>
@@ -35,7 +33,7 @@
 
 
   <div  id='likes-given'>
-      <h2><i style="color:red;" class="fas fa-heart"></i><span>Likes given to the following posts</span><i style="color:red;" class="fas fa-heart"></i></h2>
+      <h4><i style="color:red;" class="fas fa-heart"></i><span>I liked these 4 you</span><i style="color:red;" class="fas fa-heart"></i></h4>
       <div class="user-tabs cards">
 
           <% @job.given_likes.each do |given_like| %>
@@ -71,7 +69,16 @@
           </tr>
         </tbody>
       </table>
-    </div> -->
+    </div>
+
+<i class="fas fa-user-plus"></i>
+            <p> For this post you received <b><%= @job.likes_received %> likes </b> and gained <b><%= rand(10..20)%> followers </b> on your account </p>
+            <p> OUT OF THOSE </p>
+            <p> <b><%= rand(10..50)%> likes </b> and <b><%= rand(10..50)%> followers </b> were gained thanks to the bot</p>
+          </div>
+
+
+  -->
 
 
 
