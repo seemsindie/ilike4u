@@ -9,6 +9,7 @@
               <div class="card" style="width: 18rem;">
                 <div class="card-body">
                   <h5 class="card-title"><%= job.created_at %></h5>
+                  <%= job.given_likes.count%>
                 </div>
                 <% if job.image_url != nil %>
                   <img src="<%=job.image_url + "media/?size=m" %>" alt="Your latest Post" class="card-img-top">

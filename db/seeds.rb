@@ -358,7 +358,7 @@ a37 = GivenLike.new(
 a37.save!
 
 a38 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-Momg2Tg/",
+  ig_media_id: "https://www.instagram.com/p/B5qLSe0pwn0/",
   job_id: techno.id
 )
 a38.save!
@@ -416,12 +416,6 @@ a48 = GivenLike.new(
   job_id: techno.id
 )
 a48.save!
-
-
-
-
-
-
 
 
 a49 = GivenLike.new(
@@ -1338,7 +1332,7 @@ d37 = GivenLike.new(
 d37.save!
 
 d38 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-Momg2Tg/",
+  ig_media_id: "https://www.instagram.com/p/B5qLSe0pwn0/",
   job_id: techno3.id
 )
 d38.save!
@@ -1658,7 +1652,7 @@ e37 = GivenLike.new(
 e37.save!
 
 e38 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-Momg2Tg/",
+  ig_media_id: "https://www.instagram.com/p/B5qLSe0pwn0/",
   job_id: techno4.id
 )
 e38.save!
@@ -1978,7 +1972,7 @@ f7 = GivenLike.new(
 f7.save!
 
 f8 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-Momg2Tg/",
+  ig_media_id: "https://www.instagram.com/p/B5qLSe0pwn0/",
   job_id: techno5.id
 )
 f8.save!
@@ -2298,7 +2292,7 @@ g37 = GivenLike.new(
 g37.save!
 
 g38 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-Momg2Tg/",
+  ig_media_id: "https://www.instagram.com/p/B5qLSe0pwn0/",
   job_id: techno6.id
 )
 g38.save!
@@ -2618,7 +2612,7 @@ h37 = GivenLike.new(
 h37.save!
 
 h38 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-Momg2Tg/",
+  ig_media_id: "https://www.instagram.com/p/B5qLSe0pwn0/",
   job_id: techno7.id
 )
 h38.save!
@@ -2937,7 +2931,7 @@ i37 = GivenLike.new(
 i37.save!
 
 i38 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5o-Momg2Tg/",
+  ig_media_id: "https://www.instagram.com/p/B5qLSe0pwn0/",
   job_id: techno8.id
 )
 i38.save!
