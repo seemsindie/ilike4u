@@ -24,6 +24,8 @@ class JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
+    @likes_backs = rand(0..@job.given_likes.count)
+    @jobtime = ((@job.stopped_at - @job.launched_at) / 60).round
   end
 
   def edit
@@ -41,6 +43,6 @@ class JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:caption, :hashtag, :user_id, :likes_received, :launched_at, :instagram_username, :instagram_password)
+    params.require(:job).permit(:caption, :hashtag, :user_id, :likes_received, :launched_at, :instagram_username, :instagram_password, :followers_gained)
   end
 end

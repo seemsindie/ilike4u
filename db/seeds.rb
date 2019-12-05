@@ -12,93 +12,17 @@ petpawer.save!
 
 puts 'Creating jobs...'
 
-techno9 = Job.new(
-  image_url: "https://www.instagram.com/p/BTHk91-jSoE/",
-  caption: "Meeting someone for the first time ",
-  hashtag: "pets",
-  user_id: petpawer.id,
-  likes_received: 123,
-  launched_at: DateTime.new(2019,11,01,9,25,30),
-  stopped_at: DateTime.new(2019,11,01,9,27,30)
-)
-techno9.save!
-
-techno8 = Job.new(
-  image_url: "https://www.instagram.com/p/BTMxaosjOtC/",
-  caption: "we are siamese if you please",
-  hashtag: "cats",
-  user_id: petpawer.id,
-  likes_received: 144,
-  launched_at: Time.now,
-  stopped_at: Time.now + 125
-)
-techno8.save!
-
-techno7 = Job.new(
-  image_url: "https://www.instagram.com/p/BTPChRMDuqJ/",
-  caption: "he is my new president",
-  hashtag: "doggy",
-  user_id: petpawer.id,
-  likes_received: 110,
-  launched_at: Time.now,
-  stopped_at: Time.now + 125
-)
-techno7.save!
-
-techno6 = Job.new(
-  image_url: "https://www.instagram.com/p/BTR66HKDhHo/",
-  caption: "WAtcha doiiing ?",
-  hashtag: "frenchies",
-  user_id: petpawer.id,
-  likes_received: 125,
-  launched_at: Time.now,
-  stopped_at: Time.now + 125
-)
-techno6.save!
-
-techno5 = Job.new(
-  image_url: "https://www.instagram.com/p/BTUVtlZjY3r/",
-  caption: "I saw this pic and I just melted ",
-  hashtag: "kitten",
-  user_id: petpawer.id,
-  likes_received: 133,
-  launched_at: Time.now,
-  stopped_at: Time.now + 125
-)
-techno5.save!
-
-techno4 = Job.new(
-  image_url: "https://www.instagram.com/p/BTZt0YnDul_/",
-  caption: "Thursday: an inspiring day ! Juste the whole weekend ahead of us",
-  hashtag: "dogdog",
+techno = Job.new(
+  image_url: "https://www.instagram.com/p/BTo93XXjz60/",
+  caption: "Big days ahead of us !",
+  hashtag: "dogs",
   user_id: petpawer.id,
   likes_received: 161,
-  launched_at: Time.now,
-  stopped_at: Time.now + 125
+  launched_at: DateTime.new(2019,12,5,12,15,30),
+  stopped_at: DateTime.new(2019,12,5,13,00,28),
+  followers_gained: rand(1..20)
 )
-techno4.save!
-
-techno3 = Job.new(
-  image_url: "https://www.instagram.com/p/BTcV7D2D5SU/",
-  caption: "It's Friiiiiday!!! Let's do something :D!! :D",
-  hashtag: "doggy",
-  user_id: petpawer.id,
-  likes_received: 145,
-  launched_at: Time.now,
-  stopped_at: Time.now + 125
-)
-techno3.save!
-
-techno2 = Job.new(
-  image_url: "https://www.instagram.com/p/BTe3pzsj-J3/",
-  caption: "Friday cuteness!! Wish you all the best!! :)",
-  hashtag: "dogsofinstagram",
-  user_id: petpawer.id,
-  likes_received: 131,
-  launched_at: Time.now,
-  stopped_at: Time.now + 125
-)
-techno2.save!
+techno.save!
 
 techno1 = Job.new(
   image_url: "https://www.instagram.com/p/BTj8svAjgLr/",
@@ -106,21 +30,107 @@ techno1 = Job.new(
   hashtag: "dogs",
   user_id: petpawer.id,
   likes_received: 139,
-  launched_at: Time.now,
-  stopped_at: Time.now + 125
+  launched_at: DateTime.new(2019,12,4,7,27,30),
+  stopped_at: DateTime.new(2019,12,4,8,13,28),
+  followers_gained: rand(1..20)
 )
 techno1.save!
 
-techno = Job.new(
-  image_url: "https://www.instagram.com/p/BTo93XXjz60/",
-  caption: "Big days ahead of us !",
-  hashtag: "dogs",
+techno2 = Job.new(
+  image_url: "https://www.instagram.com/p/BTe3pzsj-J3/",
+  caption: "Friday cuteness!! Wish you all the best!! :)",
+  hashtag: "dogsofinstagram",
+  user_id: petpawer.id,
+  likes_received: 131,
+  launched_at: DateTime.new(2019,12,3,15,55,30),
+  stopped_at: DateTime.new(2019,12,3,16,40,28),
+  followers_gained: rand(1..20)
+)
+techno2.save!
+
+techno3 = Job.new(
+  image_url: "https://www.instagram.com/p/BTcV7D2D5SU/",
+  caption: "It's Friiiiiday!!! Let's do something :D!! :D",
+  hashtag: "doggy",
+  user_id: petpawer.id,
+  likes_received: 145,
+  launched_at: DateTime.new(2019,12,2,18,27,30),
+  stopped_at: DateTime.new(2019,12,2,19,13,28),
+  followers_gained: rand(1..20)
+)
+techno3.save!
+
+techno4 = Job.new(
+  image_url: "https://www.instagram.com/p/BTZt0YnDul_/",
+  caption: "Thursday: an inspiring day ! Juste the whole weekend ahead of us",
+  hashtag: "dogdog",
   user_id: petpawer.id,
   likes_received: 161,
-  launched_at: Time.now,
-  stopped_at: Time.now + 125
+  launched_at: DateTime.new(2019,12,1,7,27,30),
+  stopped_at: DateTime.new(2019,12,1,8,13,28),
+  followers_gained: rand(1..20)
 )
-techno.save!
+techno4.save!
+
+techno5 = Job.new(
+  image_url: "https://www.instagram.com/p/BTUVtlZjY3r/",
+  caption: "I saw this pic and I just melted ",
+  hashtag: "kitten",
+  user_id: petpawer.id,
+  likes_received: 133,
+  launched_at: DateTime.new(2019,11,30,12,15,30),
+  stopped_at: DateTime.new(2019,11,30,13,00,28),
+  followers_gained: rand(1..20)
+)
+techno5.save!
+
+techno6 = Job.new(
+  image_url: "https://www.instagram.com/p/BTR66HKDhHo/",
+  caption: "WAtcha doiiing ?",
+  hashtag: "frenchies",
+  user_id: petpawer.id,
+  likes_received: 125,
+  launched_at: DateTime.new(2019,11,29,7,27,30),
+  stopped_at: DateTime.new(2019,11,29,8,13,28),
+  followers_gained: rand(1..20)
+)
+techno6.save!
+
+techno7 = Job.new(
+  image_url: "https://www.instagram.com/p/BTPChRMDuqJ/",
+  caption: "he is my new president",
+  hashtag: "doggy",
+  user_id: petpawer.id,
+  likes_received: 110,
+  launched_at: DateTime.new(2019,11,28,15,55,30),
+  stopped_at: DateTime.new(2019,11,28,16,40,28),
+  followers_gained: rand(1..20)
+)
+techno7.save!
+
+techno8 = Job.new(
+  image_url: "https://www.instagram.com/p/BTMxaosjOtC/",
+  caption: "we are siamese if you please",
+  hashtag: "cats",
+  user_id: petpawer.id,
+  likes_received: 144,
+  launched_at: DateTime.new(2019,11,27,18,27,30),
+  stopped_at: DateTime.new(2019,11,27,19,13,28),
+  followers_gained: rand(1..20)
+)
+techno8.save!
+
+techno9 = Job.new(
+  image_url: "https://www.instagram.com/p/BTHk91-jSoE/",
+  caption: "Meeting someone for the first time ",
+  hashtag: "pets",
+  user_id: petpawer.id,
+  likes_received: 123,
+  launched_at: DateTime.new(2019,11,26,12,15,30),
+  stopped_at: DateTime.new(2019,11,26,13,00,28),
+  followers_gained: rand(1..20)
+)
+techno9.save!
 
 techno10 = Job.new(
   image_url: "https://www.instagram.com/p/BSwCK3njJcf/",
@@ -128,8 +138,9 @@ techno10 = Job.new(
   hashtag: "kittens",
   user_id: petpawer.id,
   likes_received: 2,
-  launched_at: Time.now,
-  stopped_at: Time.now + 125
+  launched_at: DateTime.new(2019,12,6,12,15,30),
+  stopped_at: DateTime.new(2019,12,6,13,00,28),
+  followers_gained: 0
 )
 techno10.save!
 
@@ -581,7 +592,7 @@ b21 = GivenLike.new(
 b21.save!
 
 b22 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5pEbwtluIW/",
+  ig_media_id: "https://www.instagram.com/p/B5sPWaCJ9Xw/?hl=fr",
   job_id: techno1.id
 )
 b22.save!
@@ -593,7 +604,7 @@ b23 = GivenLike.new(
 b23.save!
 
 b24 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5ooSNrBu3f/",
+  ig_media_id: "https://www.instagram.com/p/B5sQUyQgpdU/",
   job_id: techno1.id
 )
 b24.save!
@@ -816,7 +827,7 @@ c14 = GivenLike.new(
 c14.save!
 
 c15 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5pI5plgH7w/",
+  ig_media_id: "https://www.instagram.com/p/B5sP-9RBNdc/",
   job_id: techno2.id
 )
 c15.save!
@@ -936,7 +947,7 @@ c34 = GivenLike.new(
 c34.save!
 
 c35 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5pIvCGpdJ8/",
+  ig_media_id: "https://www.instagram.com/p/B5sPp8TAYde/",
   job_id: techno2.id
 )
 c35.save!
@@ -972,7 +983,7 @@ c40 = GivenLike.new(
 c40.save!
 
 c41 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5pI-f2l0tM/",
+  ig_media_id: "https://www.instagram.com/p/B5sPpurBFuy/",
   job_id: techno2.id
 )
 c41.save!
@@ -1020,7 +1031,7 @@ c49 = GivenLike.new(
 c49.save!
 
 c50 = GivenLike.new(
-  ig_media_id: "https://www.instagram.com/p/B5ooSNrBu3f/",
+  ig_media_id: "https://www.instagram.com/p/B5sPg4_lsx3/?hl=fr",
   job_id: techno2.id
 )
 c50.save!
