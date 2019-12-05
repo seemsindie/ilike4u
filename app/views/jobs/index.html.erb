@@ -3,7 +3,7 @@
   <div class="card-body">
     <div class="row">
       <% @jobs.each do |job| %>
-      <div class="col-6 col-sm-4 col-md-3" style="margin-bottom: 15px">
+      <div class="col-6 col-sm-6 col-md-3" style="margin-bottom: 15px">
         <div class="card">
           <div class="card-body">
             <h5 class="card-title"><%= job.launched_at.strftime("%d %B %Y") %></h5>
@@ -14,7 +14,7 @@
           <% end %>
           <%end%>
           <div>
-            <h2><i style="color:black;" class="fas fa-hashtag"> </i> <%= job.hashtag %> </h2>
+            <h3><i style="color:black;" class="fas fa-hashtag"> </i> <%= job.hashtag %> </h3>
             <p> <b><%= job.given_likes.count%> <i style="color:black;" class="fas fa-heart"></i> given </b> </p>
             <p> <b><%= job.likes_received %> <i style="color:red;" class="fas fa-heart"></i> received </b> </p>
           </div>
