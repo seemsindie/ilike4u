@@ -11,20 +11,28 @@ class JobsController < ApplicationController
   end
 
   def create
-    # @user = User.find(params[:user_id])
-    # @job = Job.new(job_params)
-    # @job.user = @user
+    @user = User.find(params[:user_id])
+    @job = Job.new(job_params)
+    @job.user = @user
+    @job.launched_at = Time.now + 60.minutes
 
-    # @job.save
+    @job.save
 
     # Bot.insta_bot(@job)
 
-    redirect_to user_jobs_path(current_user)
+    # redirect_to user_jobs_path(current_user)
+
+    redirect_to user_job_run_path(current_user.id, @job.id)
   end
 
   def show
     @job = Job.find(params[:id])
     @likes_backs = rand(0..@job.given_likes.count)
+    @job.hashtag = params[:hashtag] if @job.hashtag.nil?
+    @job.followers_gained = 0 if @job.followers_gained.nil?
+    @job.likes_received = 0 if @job.likes_received.nil?
+    @job.stopped_at = Time.now + 61.minutes if @job.stopped_at.nil?
+    @job.image_url = 'https://www.instagram.com/p/B5sOGp_goj3/' if @job.image_url.nil?
     @jobtime = ((@job.stopped_at - @job.launched_at) / 60).round
   end
 
@@ -40,9 +48,13 @@ class JobsController < ApplicationController
     redirect_to user_jobs_path(@user)
   end
 
+  def run
+    # redirect_to user_job_run_path(@user)
+  end
+
   private
 
   def job_params
-    params.require(:job).permit(:caption, :hashtag, :user_id, :likes_received, :launched_at, :instagram_username, :instagram_password, :followers_gained)
+    params.require(:job).permit(:caption, :hashtag, :user_id, :likes_received, :launched_at, :instagram_username, :instagram_password, :followers_gained, :stopped_at)
   end
 end
