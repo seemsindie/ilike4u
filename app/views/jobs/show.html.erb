@@ -18,7 +18,7 @@
                 <% end %>
                 <p class="card-text"> <%#= @job.caption %></p>
                 <!--<h3>Job launched </h3>  -->
-                <p><%= @job.created_at %></p>
+                <p><%= @job.launched_at.strftime("%A @%k:%M") %></p>
                 <h2><i style="color:black;" class="fas fa-hashtag"> </i> <%= @job.hashtag %></h2>
                 <p> <b><%= @job.given_likes.count%> <i style="color:black;" class="fas fa-heart"></i> given </b> </p>
                 <p> <b><%= @job.likes_received %> <i style="color:red;" class="fas fa-heart"></i> received </b> </p>
