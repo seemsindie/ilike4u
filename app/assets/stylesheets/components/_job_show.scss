@@ -19,13 +19,21 @@ border-radius: 15px;
 }
 
 #post img {
-  margin-bottom: 50px;
+  margin-bottom: 15px;
 }
 
 .card {
   width: auto;
   margin-bottom: 15px;
 }
+
+
+.card-header {
+  display: flex;
+  align-items: center;
+  place-content: center;
+}
+
 
 #post .card-img {
 //max-width: 300px;
