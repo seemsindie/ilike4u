@@ -39,7 +39,7 @@ techno1.save!
 techno2 = Job.new(
   image_url: "https://www.instagram.com/p/BTe3pzsj-J3/",
   caption: "Friday cuteness!! Wish you all the best!! :)",
-  hashtag: "dogsofinstagram",
+  hashtag: "doggo",
   user_id: petpawer.id,
   likes_received: 131,
   launched_at: DateTime.new(2019,12,3,15,55,30),
