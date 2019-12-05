@@ -20,9 +20,10 @@
                 <!--<h3>Job launched </h3>  -->
                 <p><%= @job.created_at %></p>
                 <h2><i style="color:black;" class="fas fa-hashtag"> </i> <%= @job.hashtag %></h2>
-                <p> <b><%= @job.given_likes.count%> <i style="color:black;" class="fas fa-heart"></i> given </b> </p>
+                <p> <b> <i style="color:grey;" <i class="fas fa-stopwatch"></i> 40min </b> </p>
+                <p> <b><%= rand(10..20)%> <i style="color:green;" class="fas fa-heart"></i> backs </b> </p>
+                <p> <b><%= rand(0..10)%>  <i style="color:green;" class="fas fa-user-plus"></i> gained </b> </p>
                 <p> <b><%= @job.likes_received %> <i style="color:red;" class="fas fa-heart"></i> received </b> </p>
-                <p> <b><%= rand(0..20)%>  <i style="color:green;" class="fas fa-user-plus"></i> gained </b> </p>
             </div>
           </div>
         </th>
@@ -33,7 +34,7 @@
 
 
   <div  id='likes-given'>
-      <h4><i style="color:red;" class="fas fa-heart"></i><span>I liked these 4 you</span><i style="color:red;" class="fas fa-heart"></i></h4>
+      <h4><b><%= @job.given_likes.count%> given <i style="color:black;" class="fas fa-heart"></i></b></h4>
       <div class="user-tabs cards">
 
           <% @job.given_likes.each do |given_like| %>
