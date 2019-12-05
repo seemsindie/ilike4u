@@ -8,13 +8,18 @@
             <div class="col-4 mt-4">
               <div class="card" style="width: 18rem;">
                 <div class="card-body">
-                  <h5 class="card-title"><%= job.created_at %></h5>
-                  <%= job.given_likes.count%>
+                  <h5 class="card-title"><%= job.launched_at %></h5>
+                  <!--  <%= job.given_likes.count%> -->
                 </div>
                 <% if job.image_url != nil %>
                   <img src="<%=job.image_url + "media/?size=m" %>" alt="Your latest Post" class="card-img-top">
                   <%= link_to 'job info',  user_job_path(params[:user_id], job.id) %>
                 <% end %>
+                <div>
+                <h2><i style="color:black;" class="fas fa-hashtag"> </i> <%= job.hashtag %> </h2>
+                <p> <b><%= job.given_likes.count%> <i style="color:black;" class="fas fa-heart"></i> given </b> </p>
+                <p> <b><%= job.likes_received %> <i style="color:red;" class="fas fa-heart"></i> received </b> </p>
+              </div>
               </div>
             </div>
           <% end %>
