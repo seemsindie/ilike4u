@@ -21,7 +21,7 @@
                 <p><%= @job.launched_at.strftime("%A @%k:%M") %></p>
                 <h2><i style="color:black;" class="fas fa-hashtag"> </i> <%= @job.hashtag %></h2>
                 <p> <b> <i style="color:grey;" <i class="fas fa-stopwatch"></i> 40min </b> </p>
-                <p> <b><%= rand(10..20)%> <i style="color:green;" class="fas fa-heart"></i> backs </b> </p>
+                <p> <b><%= @likes_backs %> <i style="color:green;" class="fas fa-heart"></i> backs </b> </p>
                 <p> <b><%= rand(0..10)%>  <i style="color:green;" class="fas fa-user-plus"></i> gained </b> </p>
                 <p> <b><%= @job.likes_received %> <i style="color:red;" class="fas fa-heart"></i> received </b> </p>
             </div>
