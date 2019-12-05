@@ -1,3 +1,5 @@
+require 'date'
+
 puts 'Cleaning database...'
 GivenLike.destroy_all
 Job.destroy_all
@@ -16,8 +18,8 @@ techno9 = Job.new(
   hashtag: "pets",
   user_id: petpawer.id,
   likes_received: 123,
-  launched_at: 2019-11-05 06:59:12,
-  stopped_at: Time.now + 125
+  launched_at: DateTime.new(2019,11,01,9,25,30),
+  stopped_at: DateTime.new(2019,11,01,9,27,30)
 )
 techno9.save!
 
