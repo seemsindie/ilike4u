@@ -15,14 +15,13 @@ class JobsController < ApplicationController
     @job = Job.new(job_params)
     @job.user = @user
     @job.launched_at = Time.now + 60.minutes
-    @job.image_url = 'https://www.instagram.com/p/B5sOGp_goj3/'
+    @job.image_url = 'https://www.instagram.com/p/B5uiUfIjmoJ/'
     @job.save
     given_likes = GivenLike.new(
       ig_media_id: "https://www.instagram.com/p/B5o-Gj1o1Zf/",
       job_id: @job.id
     )
     given_likes.save
-
 
     # Bot.insta_bot(@job)
 
