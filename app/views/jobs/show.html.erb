@@ -16,11 +16,9 @@
           <p class="card-text"></p>
           <p><%= @job.launched_at.strftime("%A @%k:%M") %></p>
           <h2><i style="color:black;" class="fas fa-hashtag"> </i> <%= @job.hashtag %></h2>
-          <p> <b> <i style="color:grey;" class="fas fa-stopwatch"></i> <%= @jobtime %> min</b> </p>
+          <p><b> <i style="color:grey;" class="fas fa-stopwatch"></i> <%= @jobtime %> min</b> </p>
           <p><b><%= @job.given_likes.count%> <i style="color:black;" class="fas fa-heart"></i> given </b></p>
-          <p> <b><%= @likes_backs %> <i style="color:green;" class="fas fa-heart"></i> backs </b> </p>
-
-
+          <p><b><%= @likes_backs %> <i style="color:green;" class="fas fa-heart"></i> backs </b> </p>
       </div>
     </div>
   </div>
