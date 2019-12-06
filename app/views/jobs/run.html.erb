@@ -1,5 +1,7 @@
-<h1>The bot is liking for you...</h1>
+<h1>The bot is liking for you... </h1>
+<h2> #<%= Job.last.hashtag %> </h2>
 
-<p>45 minutes</p>
+    <% newtime =  Job.last.updated_at + 105.minutes %>
 
-<%= link_to 'stop', user_job_path(current_user.id, current_user.jobs.last.id), class: "btn btn-danger" %>
+        <div class="timer" data-time='<%= newtime.strftime("%b %d, %Y %H:%M:%S"); %>'></div>
+<%= link_to 'stop', user_job_path(current_user.id, current_user.jobs.last.id), class: "btn btn-danger btn-lg" %>
