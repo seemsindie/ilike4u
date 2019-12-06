@@ -1,7 +1,31 @@
 <h1>The bot is liking for you... </h1>
 <h2> #<%= Job.last.hashtag %> </h2>
 
-    <% newtime =  Job.last.updated_at + 105.minutes %>
 
-        <div class="timer" data-time='<%= newtime.strftime("%b %d, %Y %H:%M:%S"); %>'></div>
+<div id="timer" class="timer"></div>
+<script type="text/javascript">
+    var timeoutHandle;
+    function countdown(minutes, seconds) {
+        function tick() {
+            var counter = document.getElementById("timer");
+            counter.innerHTML =
+                minutes.toString() + " m " + (seconds < 10 ? "0" : "") + String(seconds) + " s";
+            seconds--;
+            if (seconds >= 0) {
+                timeoutHandle = setTimeout(tick, 1000);
+            } else {
+                if (minutes >= 1) {
+                    // countdown(mins-1);   never reach “00″ issue solved:Contributed by Victor Streithorst
+                    setTimeout(function () {
+                        countdown(minutes - 1, 59);
+                    }, 1000);
+                }
+            }
+        }
+        tick();
+    }
+
+    countdown(45, 00);
+</script>
+
 <%= link_to 'stop', user_job_path(current_user.id, current_user.jobs.last.id), class: "btn btn-danger btn-lg" %>
