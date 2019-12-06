@@ -17,17 +17,17 @@
           <p><%= @job.launched_at.strftime("%A @%k:%M") %></p>
           <h2><i style="color:black;" class="fas fa-hashtag"> </i> <%= @job.hashtag %></h2>
           <p> <b> <i style="color:grey;" class="fas fa-stopwatch"></i> <%= @jobtime %> min</b> </p>
+          <p><b><%= @job.given_likes.count%> <i style="color:black;" class="fas fa-heart"></i> given </b></p>
           <p> <b><%= @likes_backs %> <i style="color:green;" class="fas fa-heart"></i> backs </b> </p>
-          <p> <b><%= @job.followers_gained %>  <i style="color:green;" class="fas fa-user-plus"></i> gained </b> </p>
-          <p> <b><%= @job.likes_received %> <i style="color:red;" class="fas fa-heart"></i> received </b> </p>
+
+
       </div>
     </div>
   </div>
 
   <div  id='likes-given' class="col">
-    <h4><b><%= @job.given_likes.count%> given <i style="color:black;" class="fas fa-heart"></i></b></h4>
     <div class="cards">
-
+        <h4><b>I<i style="color:red;" class="fas fa-heart"></i>4 you </b></h4>
         <% @job.given_likes.each do |given_like| %>
         <a href="<%= given_like.ig_media_id %>" target="_blank" >
           <img src="<%= given_like.ig_media_id + "media/?size=t" %>" alt="Your latest Post" class="float img-thumbnail">
@@ -37,3 +37,6 @@
     </div>
   </div>
 </div>
+
+<!-- <p> <b><%#= @job.likes_received %> <i style="color:red;" class="fas fa-heart"></i> received </b> </p>
+          <p> <b><%#= @job.followers_gained %>  <i style="color:green;" class="fas fa-user-plus"></i> gained </b> </p>-->
