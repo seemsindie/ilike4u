@@ -100,5 +100,6 @@ production:
   <<: *default
   host: srv-captain--il4u-db-db
   database: ilike4u_production
-  username: ilike4u
-  password: <%= ENV['ILIKE4U_DATABASE_PASSWORD'] %>
+  username: postgres
+  # username: <%= ENV['ILIKE4U_DATABASE_PASSWORD'] %>
+  password: postgres
