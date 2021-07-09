@@ -20,24 +20,26 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: srv-captain--il4u-db-db
 
 development:
   <<: *default
   database: ilike4u_development
+  # port: 5432
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  #username: ilike4u
+  username: postgres
 
   # The password associated with the postgres role (username).
-  #password:
+  password: postgres
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
   # domain sockets, so uncomment these lines.
-  #host: localhost
+  host: srv-captain--il4u-db-db
 
   # The TCP port the server listens on. Defaults to 5432.
   # If your server runs on a different port number, change accordingly.
@@ -58,6 +60,22 @@ development:
 test:
   <<: *default
   database: ilike4u_test
+  host: srv-captain--il4u-db-db
+
+
+  # The specified database role being used to connect to postgres.
+  # To create additional roles in postgres see `$ createuser --help`.
+  # When left blank, postgres will use the default role. This is
+  # the same name as the operating system user that initialized the database.
+  username: postgres
+
+  # The password associated with the postgres role (username).
+  password: postgres
+
+  # Connect on a TCP socket. Omitted by default since the client uses a
+  # domain socket that doesn't need configuration. Windows does not have
+  # domain sockets, so uncomment these lines.
+  host: srv-captain--il4u-db-db
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +98,7 @@ test:
 #
 production:
   <<: *default
+  host: srv-captain--il4u-db-db
   database: ilike4u_production
   username: ilike4u
   password: <%= ENV['ILIKE4U_DATABASE_PASSWORD'] %>
