@@ -18,7 +18,7 @@
   let user_id = process.argv[5];
   let job_id = process.argv[6];
 
-  const browser = await puppeteer.launch({ headless: false });
+  const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
 
   const afterLikeTimeout = 10000;
@@ -32,8 +32,8 @@
 
   await loginToInstagram(page);
 
-  const image = await getUserLatestPostImage(page);
-  await updateJobImage(image);
+  // const image = await getUserLatestPostImage(page);
+  // await updateJobImage(image);
 
   await goToHashtag(page, hashtag);
 
@@ -46,18 +46,18 @@
       console.log("post liked");
       likedPosts.push(page.url());
 
-      const imageSrc = await getImage(page);
+      // const imageSrc = await getImage(page);
 
-      await axios.get(
-        `http://localhost:3000/users/${user_id}/jobs/${job_id}/add_like`,
-        {
-          params: {
-            ig_media_id: page.url(),
-            ig_user_id: "seemsindie", // todo: fill in with user info
-            image_url: imageSrc,
-          },
-        }
-      );
+      // await axios.get(
+      //   `http://localhost:3000/users/${user_id}/jobs/${job_id}/add_like`,
+      //   {
+      //     params: {
+      //       ig_media_id: page.url(),
+      //       ig_user_id: "seemsindie", // todo: fill in with user info
+      //       image_url: imageSrc,
+      //     },
+      //   }
+      // );
     }
 
     await page.waitForTimeout(2000);
