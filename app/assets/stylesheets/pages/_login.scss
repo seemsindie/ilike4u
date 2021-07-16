@@ -1,0 +1,13 @@
+.forgot-password {
+    font-size: 13px;
+    color: black;
+    
+    &:hover {
+        color: lighten(black, 10%);
+    }
+}
+
+body {
+  background-color: white;
+
+}
