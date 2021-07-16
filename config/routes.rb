@@ -6,6 +6,9 @@ Rails.application.routes.draw do
 
     resources :jobs, except: :delete do
       get 'run'
+      get 'stop'
+      get 'add_like'
+      get 'update_image'
      resources :given_likes, :delete
     end
   end

@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :except => [:add_like, :update_image]
+  # skip_before_action :authenticate_user!
 
   def index
     @jobs = Job.where(user_id: current_user)
@@ -14,18 +15,23 @@ class JobsController < ApplicationController
     @user = User.find(params[:user_id])
     @job = Job.new(job_params)
     @job.user = @user
-    @job.launched_at = Time.now + 60.minutes
-    @job.image_url = 'https://www.instagram.com/p/B5uiUfIjmoJ/'
+    @job.launched_at = Time.now # we already have created_at
     @job.save
-    given_likes = GivenLike.new(
-      ig_media_id: "https://www.instagram.com/p/B5o-Gj1o1Zf/",
-      job_id: @job.id
-    )
-    given_likes.save
+
+    # given_likes = GivenLike.new(
+    #   ig_media_id: "https://www.instagram.com/p/B5o-Gj1o1Zf/",
+    #   job_id: @job.id
+    # )
+    # given_likes.save
 
     # Bot.insta_bot(@job)
 
     # redirect_to user_jobs_path(current_user)
+
+    process_pid = Process.spawn("node /home/timelord/Projects/ilike4u/app/services/bot.js #{job_params[:instagram_username]} #{job_params[:instagram_password]} #{job_params[:hashtag]} #{params[:user_id]} #{@job.id}")
+
+    @job.process_pid = process_pid
+    @job.save
 
     redirect_to user_job_run_path(current_user.id, @job.id)
   end
@@ -54,6 +60,36 @@ class JobsController < ApplicationController
 
   def run
     # redirect_to user_job_run_path(@user)
+  end
+
+  def stop
+    @job = Job.find(params[:job_id])
+
+    if !@job.process_pid.nil?
+      Process.kill("HUP", @job.process_pid.to_i)
+    end
+
+    redirect_to user_job_path(params[:user_id], @job.id)
+  end
+
+  def add_like
+    gl = GivenLike.new
+
+    gl.ig_media_id = params[:ig_media_id]
+    gl.ig_user_id = params[:ig_user_id]
+    gl.job = Job.find(params[:job_id])
+    gl.save!
+
+    render json: gl
+  end
+
+  def update_image
+    job = Job.find(params[:job_id])
+
+    job.image_url = params[:image_url]
+    job.save!
+
+    render json: job
   end
 
   private

@@ -28,4 +28,4 @@
     countdown(45, 00);
 </script>
 
-<%= link_to 'stop', user_job_path(current_user.id, current_user.jobs.last.id), class: "btn btn-danger btn-lg" %>
+<%= link_to 'stop', user_job_stop_path(current_user.id, current_user.jobs.last.id), class: "btn btn-danger btn-lg" %>

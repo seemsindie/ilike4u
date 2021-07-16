@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_05_103735) do
+ActiveRecord::Schema.define(version: 2021_07_16_184136) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2019_12_05_103735) do
     t.bigint "job_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image_url"
     t.index ["job_id"], name: "index_given_likes_on_job_id"
   end
 
@@ -36,6 +37,7 @@ ActiveRecord::Schema.define(version: 2019_12_05_103735) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "followers_gained"
+    t.string "process_pid"
     t.index ["user_id"], name: "index_jobs_on_user_id"
   end
 
