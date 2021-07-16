@@ -76,7 +76,11 @@
 
   async function loginToInstagram(page) {
     // Login to instagram
+    await page.setUserAgent('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36');
+
     await page.goto("https://www.instagram.com/");
+    await page.waitForTimeout(2000);
+    // await page.screenshot({path: 'login.png'})
     {
       const targetPage = page;
       const frame = targetPage.mainFrame();

@@ -28,8 +28,9 @@ class JobsController < ApplicationController
 
     # redirect_to user_jobs_path(current_user)
 
-    process_pid = Process.spawn("node /home/timelord/Projects/ilike4u/app/services/bot.js #{job_params[:instagram_username]} #{job_params[:instagram_password]} #{job_params[:hashtag]} #{params[:user_id]} #{@job.id}")
+    process_pid = Process.spawn("node ./app/services/bot.js #{job_params[:instagram_username]} #{job_params[:instagram_password]} #{job_params[:hashtag]} #{params[:user_id]} #{@job.id}")
 
+    # Process.spawn('pwd')
     @job.process_pid = process_pid
     @job.save
 
