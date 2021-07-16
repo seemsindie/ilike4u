@@ -21,7 +21,7 @@
   const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
 
-  const afterLikeTimeout = 10000;
+  const afterLikeTimeout = 45000;
 
   // Stop the bot after 45 minutes, 45 * 60 * 1000 = 2700000
   setTimeout(async function () {
