@@ -23,5 +23,7 @@ Rails.application.routes.draw do
 
   get 'register/final' => 'pages#register_final'
 
+  get 'register/shadow' => 'pages#register_shadowbaning'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
