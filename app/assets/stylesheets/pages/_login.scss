@@ -1,13 +1,18 @@
 .forgot-password {
-    font-size: 13px;
-    color: black;
-    
-    &:hover {
-        color: lighten(black, 10%);
-    }
+  font-size: 13px;
+  color: black;
+
+  &:hover {
+    color: lighten(black, 10%);
+  }
 }
 
 body {
   background-color: white;
-
+}
+.form-group {
+  input {
+    margin-bottom: 30px;
+    border-color: #56b1ff;
+  }
 }

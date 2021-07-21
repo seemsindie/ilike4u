@@ -19,22 +19,30 @@
 .card-signin .card-img-left {
   width: 45%;
   /* Link to your background image using in the property below! */
-  background: scroll center url('https://source.unsplash.com/WEQbe2jBg40/414x512');
+  background: scroll center
+    url('https://source.unsplash.com/WEQbe2jBg40/414x512');
   background-size: cover;
 }
 
 .card-signin .card-body {
-  padding: 2rem;
+  // padding: 2rem;
+}
+.card-body {
+  height: 100%;
+}
+.new_user {
+  height: 100%;
 }
 
 .form-signin {
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .form-signin .btn {
   font-size: 80%;
   border-radius: 5rem;
-  letter-spacing: .1rem;
+  letter-spacing: 0.1rem;
   font-weight: bold;
   padding: 1rem;
   transition: all 0.2s;
@@ -50,12 +58,12 @@
   border-radius: 2rem;
 }
 
-.form-label-group>input,
-.form-label-group>label {
+.form-label-group > input,
+.form-label-group > label {
   padding: var(--input-padding-y) var(--input-padding-x);
 }
 
-.form-label-group>label {
+.form-label-group > label {
   position: absolute;
   top: 0;
   left: 0;
@@ -66,8 +74,8 @@
   line-height: 1.5;
   color: #495057;
   border: 1px solid transparent;
-  border-radius: .25rem;
-  transition: all .1s ease-in-out;
+  border-radius: 0.25rem;
+  transition: all 0.1s ease-in-out;
 }
 
 .form-label-group input::-webkit-input-placeholder {
@@ -95,7 +103,7 @@
   padding-bottom: calc(var(--input-padding-y) / 3);
 }
 
-.form-label-group input:not(:placeholder-shown)~label {
+.form-label-group input:not(:placeholder-shown) ~ label {
   padding-top: calc(var(--input-padding-y) / 3);
   padding-bottom: calc(var(--input-padding-y) / 3);
   font-size: 12px;
@@ -110,4 +118,57 @@
 .btn-facebook {
   color: white;
   background-color: #3b5998;
+}
+.imgHeadWrap {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  margin-bottom: 55px;
+  img {
+    max-width: 200px;
+  }
+}
+.CardHeading {
+  font-weight: bold;
+  min-width: 150px;
+}
+.form-inputs {
+  height: 100%;
+  .btn {
+    margin-top: 30px;
+  }
+  .form-group {
+    input {
+      margin-bottom: 30px;
+      border-color: #56b1ff;
+    }
+  }
+}
+.form-check {
+  display: flex;
+  label {
+    font-weight: bold;
+  }
+}
+.form-check-label {
+  font-size: 13px;
+}
+.steps {
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  span {
+    background-color: #5ac7fa20;
+    margin-right: 20px;
+    width: 40px;
+    border-radius: 20px;
+    height: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .done {
+    background-color: #5ac8fa;
+  }
 }
