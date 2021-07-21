@@ -18,7 +18,7 @@
   let user_id = process.argv[5];
   let job_id = process.argv[6];
 
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({ headless: false });
   const page = await browser.newPage();
 
   const afterLikeTimeout = 45000;
