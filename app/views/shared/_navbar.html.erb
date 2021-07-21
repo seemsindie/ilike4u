@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-dark bg-dark navbar-lewagon fixed-top">
+<div style="background-color: #000" class="navbar navbar-expand-sm navbar-dark navbar-lewagon fixed-top">
   <%= link_to root_path, class: "navbar-brand" do %>
     <%= image_tag "ilikelogo-white.png" %>
   <% end %>
@@ -16,22 +16,56 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "Start Job", new_user_job_path(current_user), class: "nav-link" %>
+        <li class="launchBot nav-item active">
+           <%= image_tag "icons/launchBot.png" %>
+          <%= link_to "Launch Bot", "", class: "nav-link" %>
         </li>
-        <li class="nav-item active">
-          <%= link_to "Boosted posts", user_jobs_path(current_user), class: "nav-link" %>
+        </br>
+        <li class="currentlyBoosting nav-item active">
+           <%= image_tag "icons/currentlyBoosting.png" %>
+          <%= link_to "Currently Boosting", "", class: "nav-link" %>
         </li>
-        <li class="nav-item dropdown">
-          <li class="nav-item dropdown">
-            <%= image_tag "avatar.jpg", class: "dropdown-toggle ilikelogo", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <%#= link_to "My Bookings", user_bookings_path(:user_id), class: "dropdown-item" %>
-              <%#= link_to "My Page", user_path(current_user), class: "dropdown-item" %>
-              <%#= link_to "Propose a Lesson", new_user_teacher_path(:user_id), class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-            </div>
-          </li>
+        
+        <li class="boostedPosts nav-item active">
+           <%= image_tag "icons/boostedPosts.png" %>
+          <%= link_to "Boosted Posts", "", class: "nav-link" %>
+        </li>
+        
+        <li class="emailPlusPassword nav-item active">
+           <%= image_tag "icons/emailPlusPassword.png" %>
+          <%= link_to "Email + Password", "", class: "nav-link" %>
+        </li>
+        
+        <li class="subscription nav-item active">
+           <%= image_tag "icons/subscription.png" %>
+          <%= link_to "Subscription", "", class: "nav-link" %>
+        </li>
+        </br>
+          <li class="frequentQuestion nav-item active">
+           <%= image_tag "icons/frequentQuestion.png" %>
+          <%= link_to "Frequent Question", "", class: "nav-link" %>
+        </li>
+          <li class="igTricksAndTips nav-item active">
+           <%= image_tag "icons/igTricksAndTips.png" %>
+          <%= link_to "IG Tips & Tricks", "", class: "nav-link" %>
+        </li>
+                </br>
+          <li class="giveReview nav-item active">
+           <%= image_tag "icons/giveReview.png" %>
+          <%= link_to "Give Review", "", class: "nav-link" %>
+        </li>
+          <li class="makeSugestion nav-item active">
+           <%= image_tag "icons/makeSugestion.png" %>
+          <%= link_to "Make a sugestion", "", class: "nav-link" %>
+        </li>
+        </br>
+          <li class="logOut nav-item active">
+           <%= image_tag "icons/frequentQuestion.png" %>
+
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %> 
+        </li>
+
+
         <% else %>
         
         <% end %>

@@ -17,7 +17,83 @@
   height: 40px;
 }
 
- .ilikelogo {
+.ilikelogo {
   height: 40px;
   border-radius: 50%;
- }
+}
+
+.nav-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  img {
+    max-height: 30px;
+  }
+  a {
+    margin-left: 20px;
+  }
+}
+
+.launchBot {
+  .nav-link {
+    color: #ffa7a7 !important;
+  }
+}
+.currentlyBoosting {
+  .nav-link {
+    color: #fdd4af !important;
+  }
+}
+.boostedPosts {
+  .nav-link {
+    color: #ffeeb9 !important;
+  }
+}
+
+.emailPlusPassword {
+  .nav-link {
+    color: #35db7c !important;
+  }
+}
+.subscription {
+  .nav-link {
+    color: #75f0a9 !important;
+  }
+}
+.frequentQuestion {
+  .nav-link {
+    color: #25b0ff !important;
+  }
+}
+.igTricksAndTips {
+  img {
+    margin-left: -4px;
+  }
+  .nav-link {
+    color: #56ccf2 !important;
+  }
+}
+.giveReview {
+  img {
+    margin-left: -5px;
+  }
+  .nav-link {
+    color: #d19fff !important;
+  }
+}
+.makeSugestion {
+  margin-left: 6px;
+  .nav-link {
+    margin-left: 27px;
+    color: #ff8ad0 !important;
+  }
+}
+.logOut {
+  img {
+    visibility: hidden;
+  }
+  .nav-link {
+    color: #ffa7a7 !important;
+  }
+  margin-bottom: 30px;
+}
