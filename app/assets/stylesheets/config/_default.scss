@@ -22,7 +22,10 @@ ul {
   list-style-type: none;
 }
 
-a:hover, a:active, a:link, a:visited {
+a:hover,
+a:active,
+a:link,
+a:visited {
   text-decoration: none;
 }
 
@@ -38,13 +41,12 @@ a:hover, a:active, a:link, a:visited {
 //   background-attachment: fixed;
 // }
 
-.main-container{
+.main-container {
   min-height: calc(100vh - 88px);
   padding-top: 70px;
 
   color: black;
 }
-
 
 .navbar-toggler {
   border: none;
@@ -55,4 +57,24 @@ a:hover, a:active, a:link, a:visited {
   text-transform: uppercase;
   color: white !important;
   font-size: 14px;
+}
+
+@media screen and (min-width: 992px) {
+  .navbar {
+    width: 300px !important;
+    height: 100vh !important;
+    flex-direction: column !important;
+  }
+  .navbar-nav {
+    display: flex !important;
+    flex-direction: column !important;
+    font-size: 20px !important;
+    margin-top: 30% !important;
+  }
+  .container {
+    margin-left: calc(50vw - 150px) !important;
+  }
+  .navbar-lewagon {
+    justify-content: start !important;
+  }
 }
