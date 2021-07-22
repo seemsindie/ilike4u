@@ -1,20 +1,43 @@
-<div class="container">
-  <h1>Let's start liking</h1>
-  <br>
+<body>
+  <div class="container" style="max-width: 600px;">
+    <div class="row">
+      <div class="col-lg-10 col-xl-9 mx-auto">
+        <div class="devise-bootstrap-form">
+          <div class="devise-bootstrap-form-row">
+            <div class="devise-bootstrap-form-col">
+              <h1 class="text-center mt-3 mb-3">Let's Boost</h1>
+   <small>your last Instagram (IG) picture</small>
+              </br>
   <%= simple_form_for [@user, @job] do |f| %>
-  <!--   <%= f.input :image_url %>
-    <%= f.input :caption %>
-    <%= f.input :hashtag %>
-    <%= f.input :user_id %>
-    <%= f.input :user_ig_media_id %>
-    <%= f.input :likes_received %>
-    <%= f.input :launched_at %>
-    <%= f.input :stopped_at %> -->
-
-          <%= f.input :hashtag %>
-          <%= f.input :instagram_username %>
-          <%= f.input :instagram_password %>
-    <br>
-    <%= f.submit "Launch Job", class: 'btn btn-primary btn-lg btn-block' %>
-  <% end %>
-</div>
+          <div class="imgHeadWrap">
+              <%= image_tag "letsLike.png" %>
+              <div>
+                <p>Enter IG details</p>
+                <%= f.input :instagram_username,
+                             label:false,
+                             placeholder: '@username'
+                               %>
+                <%= f.input :instagram_password,
+                             label: false,
+                             placeholder: 'IG Password'
+                              %>
+              </div>
+          </div>
+          <div class="flex-wrap">
+          <p>by liking images</br> under:</p>
+          <%= f.input :hashtag,
+                      label: false,
+                      placeholder: '# eg. innovation'
+          %>
+          </div>
+          <%= f.submit "Launch The Bot", class: 'btn btn-primary btn-lg btn-block' %>
+          <% end %>
+              
+            </div>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
