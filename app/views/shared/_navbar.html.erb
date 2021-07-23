@@ -18,17 +18,17 @@
       <% if user_signed_in? %>
         <li class="launchBot nav-item active">
            <%= image_tag "icons/launchBot.png" %>
-          <%= link_to "Launch Bot", "", class: "nav-link" %>
+          <%= link_to "Launch Bot", new_user_job_path(current_user), class: "nav-link" %>
         </li>
         </br>
         <li class="currentlyBoosting nav-item active">
            <%= image_tag "icons/currentlyBoosting.png" %>
-          <%= link_to "Currently Boosting", "", class: "nav-link" %>
+          <%= link_to "Currently Boosting", user_job_path(current_user, current_user.jobs.last.id), class: "nav-link" %>
         </li>
         
         <li class="boostedPosts nav-item active">
            <%= image_tag "icons/boostedPosts.png" %>
-          <%= link_to "Boosted Posts", "", class: "nav-link" %>
+          <%= link_to "Boosted Posts", user_jobs_path(current_user), class: "nav-link" %>
         </li>
         
         <li class="emailPlusPassword nav-item active">
