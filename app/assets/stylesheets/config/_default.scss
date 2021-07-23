@@ -56,3 +56,31 @@ a:hover, a:active, a:link, a:visited {
   color: white !important;
   font-size: 14px;
 }
+
+.liked-posts {
+  display: flex;
+  justify-content: center;
+
+  a {
+    img {
+      max-width: 300px;
+      margin-right: 10px;
+
+    }
+    &:last-child {
+      img {
+
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.profile-avatar {
+  max-width: 60px;
+  border-radius: 50%;
+}
+
+.job-image {
+  width: 100%;
+}

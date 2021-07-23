@@ -1,8 +1,11 @@
 (async () => {
   const puppeteer = require("puppeteer");
   const axios = require("axios");
-  const https = require('https');
-  const fs = require('fs');
+  const https = require("https");
+  const fs = require("fs");
+  const path = require("path");
+  const fetch = require("node-fetch");
+  const FormData = require("form-data");
 
   let likedPosts = [];
   let likeIndexColumn = 1;
@@ -18,7 +21,7 @@
   let user_id = process.argv[5];
   let job_id = process.argv[6];
 
-  const browser = await puppeteer.launch({ headless: false });
+  const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox'] });
   const page = await browser.newPage();
 
   const afterLikeTimeout = 45000;
@@ -32,9 +35,12 @@
 
   await loginToInstagram(page);
 
-  // const image = await getUserLatestPostImage(page);
-  // await updateJobImage(image);
+  // fetch user image and latest post
+  console.log("getting user images");
+  await getUserLatestPostImage(page);
+  console.log("finished getting user images");
 
+  // start liking
   await goToHashtag(page, hashtag);
 
   async function likeAndClose(page) {
@@ -46,18 +52,7 @@
       console.log("post liked");
       likedPosts.push(page.url());
 
-      // const imageSrc = await getImage(page);
-
-      // await axios.get(
-      //   `http://localhost:3000/users/${user_id}/jobs/${job_id}/add_like`,
-      //   {
-      //     params: {
-      //       ig_media_id: page.url(),
-      //       ig_user_id: "seemsindie", // todo: fill in with user info
-      //       image_url: imageSrc,
-      //     },
-      //   }
-      // );
+      await getImage(page);
     }
 
     await page.waitForTimeout(2000);
@@ -76,7 +71,9 @@
 
   async function loginToInstagram(page) {
     // Login to instagram
-    await page.setUserAgent('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36');
+    await page.setUserAgent(
+      "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36"
+    );
 
     await page.goto("https://www.instagram.com/");
     await page.waitForTimeout(2000);
@@ -98,7 +95,7 @@
       const element = await frame.waitForSelector(
         "aria/Phone number, username, or email"
       );
-      await element.type(username, {delay: 50});
+      await element.type(username, { delay: 50 });
     }
 
     await page.waitForTimeout(1000);
@@ -107,7 +104,7 @@
       const targetPage = page;
       const frame = targetPage.mainFrame();
       const element = await frame.waitForSelector("aria/Password");
-      await element.type(password, {delay: 100});
+      await element.type(password, { delay: 100 });
     }
 
     await page.waitForTimeout(1000);
@@ -133,7 +130,6 @@
 
     await likeNext(page, likeIndexColumn);
 
-    // todo: Change to 45sec
     await page.waitForTimeout(afterLikeTimeout);
 
     await goToHashtag(page, hash);
@@ -189,86 +185,165 @@
   }
 
   async function getImage(page) {
-    if (likeIndexRow == 1 && likeIndexColumn == 2 && hashtag == "pets") {
-      // special case
-
-      // get normal image
-      // evaluate XPath expression of the target selector (it return array of ElementHandle)
-      let elHandle = await page.$x(
-        "/html/body/div[5]/div[2]/div/article/div[2]/div/div/div[1]/img"
-      );
-
-      // prepare to get the textContent of the selector above (use page.evaluate)
-      let imageSrc = await page.evaluate((el) => el.src, elHandle[0]);
-
-      console.log("elHandle, imageSrc", elHandle, imageSrc);
-
-      return imageSrc;
-    } else {
-      // get normal image
-      // evaluate XPath expression of the target selector (it return array of ElementHandle)
-      let elHandle = await page.$x(
-        "/html/body/div[5]/div[2]/div/article/div[2]/div/div/div[1]/img"
-      );
-
-      // prepare to get the textContent of the selector above (use page.evaluate)
-      let imageSrc = await page.evaluate((el) => el.src, elHandle[0]);
-
-      console.log("post image, imageSrc", imageSrc);
-
-      return imageSrc;
-    }
-  }
-
-  
-
-  async function getUserLatestPostImage(page) {
-
-    await page.goto(`https://www.instagram.com/${username}/`);
-    {
-      const targetPage = page;
-      const frame = targetPage.mainFrame();
-      const promise = targetPage.waitForNavigation();
-      const element = await frame.waitForXPath(
-        '//*[@id="react-root"]/section/main/div/div[3]/article/div[1]/div/div[1]/div[1]'
-      );
-      await element.click();
-      await promise;
-    }
-
-    const frame = page.mainFrame();
-    const promise = page.waitForNavigation();
-    const element = await frame.waitForXPath(
-      "/html/body/div[5]/div[2]/div/article/div[2]/div/div/div[1]/img"
-    );
     let elHandle = await page.$x(
-      "/html/body/div[5]/div[2]/div/article/div[2]/div/div/div[1]/img"
+      `//*[@id="react-root"]/section/main/article/div[1]/div/div/div[${likeIndexRow}]/div[${likeIndexColumn}]/a/div/div[1]/img`
     );
 
     // prepare to get the textContent of the selector above (use page.evaluate)
     let imageSrc = await page.evaluate((el) => el.src, elHandle[0]);
 
-    // console.log("profile, imageSrc", imageSrc);
+    console.log("post image, imageSrc", imageSrc);
 
-    // await page.goto(imageSrc)
+    const filename = `${username}_liked_${Date.now()}.jpg`;
+    const filenamePath = path.resolve(filename);
 
-    // result = await download(imageSrc, `imagekjlk.png`);
+    // download user latest image and upload to server
+    await download(imageSrc, filename);
+    await addLike(page, filenamePath, filename);
 
+    // delete the image
+    await fs.unlinkSync(filenamePath);
 
-    return imageSrc;
+    // }
   }
 
-  async function updateJobImage(image) {
-    await axios.get(
-      `http://localhost:3000/users/${user_id}/jobs/${job_id}/update_image`,
+  async function getUserLatestPostImage(page) {
+    await page.goto(`https://www.instagram.com/${username}/`);
+
+    // get avatar image
+    {
+      const frame = page.mainFrame();
+      // const promise = page.waitForNavigation();
+      const element = await frame.waitForXPath(
+        '//*[@id="react-root"]/section/main/div/header/div/div/div/button/img'
+      );
+      let elHandle = await page.$x(
+        '//*[@id="react-root"]/section/main/div/header/div/div/div/button/img'
+      );
+      // await promise;
+
+      // prepare to get the textContent of the selector above (use page.evaluate)
+      let imageSrc = await page.evaluate((el) => el.src, elHandle[0]);
+
+      const filename = `${username}_avatar.jpg`;
+      const filenamePath = path.resolve(filename);
+
+      // download user latest image and upload to server
+      await download(imageSrc, filename);
+      await updateJobAvatar(filenamePath, filename);
+
+      // delete the image
+      await fs.unlinkSync(filenamePath);
+    }
+
+    {
+      const targetPage = page;
+      const frame = targetPage.mainFrame();
+      // const promise = targetPage.waitForNavigation();
+      const element = await frame.waitForXPath(
+        '//*[@id="react-root"]/section/main/div/div[3]/article/div[1]/div/div[1]/div[1]'
+      );
+      await element.click();
+      // await promise;
+    }
+
+    // get latest image
+    {
+      const frame = page.mainFrame();
+      // const promise = page.waitForNavigation();
+      const element = await frame.waitForXPath(
+        "/html/body/div[5]/div[2]/div/article/div[2]/div/div/div[1]/img"
+      );
+      let elHandle = await page.$x(
+        "/html/body/div[5]/div[2]/div/article/div[2]/div/div/div[1]/img"
+      );
+      // await promise;
+
+      // prepare to get the textContent of the selector above (use page.evaluate)
+      let imageSrc = await page.evaluate((el) => el.src, elHandle[0]);
+
+      const filename = `${username}_latest.jpg`;
+      const filenamePath = path.resolve(filename);
+
+      // download user latest image and upload to server
+      await download(imageSrc, filename);
+
+      console.log(filenamePath, filename);
+      await updateJobImage(filenamePath, filename);
+      console.log("updated job with images");
+
+      // delete the image
+      await fs.unlinkSync(filenamePath);
+    }
+  }
+
+  async function updateJobImage(imageFilePath, filename) {
+    const file = await fs.readFileSync(imageFilePath);
+    const form = new FormData();
+
+    form.append("image", file, filename);
+
+    console.log("before axios post to update latest image");
+    await axios.post(
+      `http://localhost:3000/users/${user_id}/jobs/${job_id}/update_latest_image`,
+      form,
       {
-        params: {
-          image_url: image,
+        headers: {
+          ...form.getHeaders(),
+        },
+      }
+    );
+    console.log("after axios post to update latest image");
+  }
+
+  async function updateJobAvatar(imageFilePath, filename) {
+    const file = await fs.readFileSync(imageFilePath);
+    const form = new FormData();
+
+    form.append("image", file, filename);
+
+    await axios.post(
+      `http://localhost:3000/users/${user_id}/jobs/${job_id}/update_avatar`,
+      form,
+      {
+        headers: {
+          ...form.getHeaders(),
         },
       }
     );
   }
 
-  
+  async function addLike(page, imageFilePath, filename) {
+    const file = await fs.readFileSync(imageFilePath);
+    const form = new FormData();
 
+    form.append("image", file, filename);
+    form.append("ig_media_id", page.url());
+    form.append("ig_user_id", "seemsindie");
+
+    await axios.post(
+      `http://localhost:3000/users/${user_id}/jobs/${job_id}/add_like`,
+      form,
+      {
+        headers: {
+          ...form.getHeaders(),
+        },
+      }
+    );
+  }
+
+  async function download(url, filename) {
+    const res = await fetch(url);
+
+    await new Promise((resolve, reject) => {
+      const fileStream = fs.createWriteStream(filename);
+      res.body.pipe(fileStream);
+      res.body.on("error", (err) => {
+        reject(err);
+      });
+      fileStream.on("finish", function () {
+        resolve();
+      });
+    });
+  }
 })();
