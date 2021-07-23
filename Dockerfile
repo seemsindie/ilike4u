@@ -1,6 +1,7 @@
 FROM ruby:2.6.3
 
 RUN apt-get update -qq && apt-get install -y npm nodejs postgresql-client
+RUN apt-get install -y libnss3-dev libgdk-pixbuf2.0-dev libgtk-3-dev libxss-dev libasound2
 RUN mkdir /myapp
 WORKDIR /myapp
 COPY Gemfile /myapp/Gemfile
