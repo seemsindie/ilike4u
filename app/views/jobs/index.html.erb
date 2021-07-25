@@ -9,8 +9,8 @@
             <h5 class="card-title"><%= job.launched_at.strftime("%d %B %Y") %></h5>
           </div>
           <%= link_to  user_job_path(params[:user_id], job.id) do %>
-          <% if job.image_url != nil %>
-            <img src="<%=job.image_url + "media/?size=m" %>" alt="Your latest Post" class="card-img-top">
+          <% if job.image.attached? %>
+          <%= image_tag(job.image, alt: 'Your latest post', class: 'job-image') %>
           <% end %>
           <%end%>
           <div>

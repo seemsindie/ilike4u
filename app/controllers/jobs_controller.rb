@@ -1,6 +1,8 @@
 class JobsController < ApplicationController
-  before_action :authenticate_user!, :except => [:add_like, :update_image]
+  before_action :authenticate_user!, :except => [:add_like, :update_latest_image, :update_avatar]
   # skip_before_action :authenticate_user!
+  skip_before_action :verify_authenticity_token, :only => [:add_like, :update_latest_image, :update_avatar]
+
 
   def index
     @jobs = Job.where(user_id: current_user)
@@ -34,7 +36,7 @@ class JobsController < ApplicationController
     @job.process_pid = process_pid
     @job.save
 
-    redirect_to user_job_run_path(current_user.id, @job.id)
+    redirect_to user_job_path(current_user.id, @job.id)
   end
 
   def show
@@ -70,6 +72,9 @@ class JobsController < ApplicationController
       Process.kill("HUP", @job.process_pid.to_i)
     end
 
+    @job.process_pid = nil
+    @job.save
+
     redirect_to user_job_path(params[:user_id], @job.id)
   end
 
@@ -78,16 +83,29 @@ class JobsController < ApplicationController
 
     gl.ig_media_id = params[:ig_media_id]
     gl.ig_user_id = params[:ig_user_id]
+    gl.image = params[:image]
     gl.job = Job.find(params[:job_id])
+
     gl.save!
 
     render json: gl
   end
 
-  def update_image
+  def update_latest_image
     job = Job.find(params[:job_id])
 
-    job.image_url = params[:image_url]
+    # binding.pry
+    job.image = params[:image]
+    job.save!
+
+    render json: job
+  end
+
+  def update_avatar
+    job = Job.find(params[:job_id])
+
+    # binding.pry
+    job.avatar = params[:image]
     job.save!
 
     render json: job
